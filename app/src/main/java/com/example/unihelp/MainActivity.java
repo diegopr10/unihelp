@@ -12,6 +12,8 @@ import android.content.SharedPreferences;
 
 public class MainActivity extends AppCompatActivity {
 
+    //comentario de rubo
+
     private SharedPreferences mySharedPreferences;
 
     @Override
