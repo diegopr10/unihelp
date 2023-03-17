@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Unihelp</string>
+    <string name="button_name">SETTINGS</string>
+    <string name="text_from_resources">What the actual thing</string>
+    <string name="start_text">EMPEZAR</string>
+    <string name="welcome_text">Bienvenido!</string>
+    <string name="settings_text">ESTAS EN LA PANTALLA DE AJUSTES</string>
+    <string name="home_text">ESTAS EN LA PANTALLA DE AJUSTES</string>
+</resources>

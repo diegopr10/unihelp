@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="MyButtonStyle" parent="Widget.AppCompat.Button">
+        <item name="android:fontFamily">@font/slackey_regular</item>
+    </style>
+
+    <style name="MyEditTextStyle" parent="Widget.AppCompat.EditText">
+        <item name="android:fontFamily">@font/slackey_regular</item>
+    </style>
+</resources>
