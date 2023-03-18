@@ -34,7 +34,7 @@
         android:layout_gravity="center_horizontal"
         android:layout_weight="0.4"
         android:background="@color/unihelp_color"
-        android:onClick="goToSettings"
+        android:onClick="start"
         android:text="@string/start_text"
         style="@style/MyButtonStyle"/>
 

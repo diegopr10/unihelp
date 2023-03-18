@@ -13,6 +13,7 @@ import android.widget.Spinner;
 
 public class intro_de_datos extends AppCompatActivity {
 
+    private SharedPreferences myPrefs;
     private Spinner spinner1,spinner2,spinner3;
     private EditText et1;
 
@@ -20,6 +21,7 @@ public class intro_de_datos extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_intro_de_datos);
+        myPrefs = getSharedPreferences("isFirstTime", MODE_PRIVATE);
 
         spinner1 = (Spinner) findViewById(R.id.spinner1);
         spinner2 = (Spinner) findViewById(R.id.spinner2);
@@ -30,8 +32,6 @@ public class intro_de_datos extends AppCompatActivity {
         String [] opciones2 = {"Primero.","Segundo.","Tercero.","Cuarto"};
         String [] opciones3 = {"Español","Inglés"};
 
-
-
         ArrayAdapter<String> adapter1 = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_dropdown_item, opciones1);
         spinner1.setAdapter(adapter1);
 
@@ -40,9 +40,6 @@ public class intro_de_datos extends AppCompatActivity {
 
         ArrayAdapter<String> adapter3 = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_dropdown_item, opciones3);
         spinner3.setAdapter(adapter3);
-
-
-
     }
 
     public void siguiente(View view){
@@ -67,10 +64,11 @@ public class intro_de_datos extends AppCompatActivity {
         obj_editor.putString(cadena[3],seleccion3);
         obj_editor.commit();
 
-
-
-        //Intent empezar = new Intent(this,inicio.class);
-        //startActivity(empezar);
-
+        //Pone isFirstTime a false para que no vuelva a aparecer en el cuestionario al iniciar la app.
+        //Luego le lleva a la pantalla de inicio mediante un intent.
+        myPrefs.edit().putBoolean("isFirstTime", false).apply();
+        Intent intent = new Intent(this,inicio.class);
+        startActivity(intent);
+        finish();
     }
 }
