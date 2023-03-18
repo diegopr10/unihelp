@@ -12,8 +12,6 @@ import android.content.SharedPreferences;
 
 public class MainActivity extends AppCompatActivity {
 
-    //comentario de rubo
-
     private SharedPreferences mySharedPreferences;
 
     @Override
@@ -22,6 +20,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         setTitle("Home");
         Log.d("Sucess","App is running");
+        getSupportActionBar().hide();
         mySharedPreferences = getSharedPreferences("com.example.unihelp.MY_PREFS", MODE_PRIVATE);
 
         String checkUserStatus = mySharedPreferences.getString("accessToApp", "first");

@@ -13,6 +13,7 @@
         android:layout_height="142dp"
         android:layout_marginStart="36dp"
         android:layout_marginTop="68dp"
+        android:background="@color/white"
         android:fontFamily="@font/slackey_regular"
         android:text="Modo estudio"
         android:textSize="20sp"
@@ -29,7 +30,7 @@
         android:text="notas"
         android:textSize="20sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/boton_estudio" />
+        app:layout_constraintTop_toBottomOf="@+id/boton_estudio"/>
 
     <Button
         android:id="@+id/boton_calendario"

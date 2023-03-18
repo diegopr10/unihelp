@@ -69,8 +69,8 @@ public class intro_de_datos extends AppCompatActivity {
 
 
 
-        Intent empezar = new Intent(this,inicio.class);
-        startActivity(empezar);
+        //Intent empezar = new Intent(this,inicio.class);
+        //startActivity(empezar);
 
     }
 }
