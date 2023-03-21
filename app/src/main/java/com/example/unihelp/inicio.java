@@ -18,7 +18,7 @@ public class inicio extends AppCompatActivity {
 
         alias = (TextView) findViewById(R.id.alias);
 
-        SharedPreferences preferencias = getSharedPreferences("Preferencias", Context.MODE_PRIVATE);
+        SharedPreferences preferencias = getSharedPreferences("MyPrefs", Context.MODE_PRIVATE);
         String cadena_alias = preferencias.getString("alias","");
 
         alias.setText(cadena_alias);

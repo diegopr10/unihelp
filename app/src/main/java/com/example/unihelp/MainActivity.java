@@ -23,7 +23,7 @@ public class MainActivity extends AppCompatActivity {
         setTitle("Home");
         Log.d("Sucess","App is running");
         getSupportActionBar().hide();
-        myPrefs = getSharedPreferences("isFirstTime", MODE_PRIVATE);
+        myPrefs = getSharedPreferences("MyPrefs", MODE_PRIVATE);
     }
     public void start(View view){
         boolean isFirstTime = myPrefs.getBoolean("isFirstTime", true);

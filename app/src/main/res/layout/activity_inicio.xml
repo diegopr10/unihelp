@@ -15,7 +15,7 @@
         android:layout_marginTop="68dp"
         android:background="@color/white"
         android:fontFamily="@font/slackey_regular"
-        android:text="Modo estudio"
+        android:text="@string/modo_estudio_text"
         android:textSize="20sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/divider" />
@@ -27,7 +27,7 @@
         android:layout_marginStart="36dp"
         android:layout_marginTop="28dp"
         android:fontFamily="@font/slackey_regular"
-        android:text="notas"
+        android:text="@string/notas_text"
         android:textSize="20sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/boton_estudio"/>
@@ -39,7 +39,7 @@
         android:layout_marginTop="68dp"
         android:layout_marginEnd="36dp"
         android:fontFamily="@font/slackey_regular"
-        android:text="Calendario"
+        android:text="@string/calendario_text"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/divider" />
@@ -51,7 +51,7 @@
         android:layout_marginTop="28dp"
         android:layout_marginEnd="36dp"
         android:fontFamily="@font/slackey_regular"
-        android:text="links"
+        android:text="@string/links_text"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/boton_calendario" />
@@ -84,7 +84,7 @@
         android:layout_marginStart="44dp"
         android:layout_marginTop="52dp"
         android:fontFamily="@font/slackey_regular"
-        android:text="Alias"
+        android:text="@string/alias_text"
         android:textColor="@color/white"
         android:textSize="24sp"
         app:layout_constraintStart_toEndOf="@+id/imageView2"
@@ -97,7 +97,7 @@
         android:layout_marginTop="16dp"
         android:layout_marginEnd="92dp"
         android:fontFamily="@font/slackey_regular"
-        android:text="Nivel:"
+        android:text="@string/level_text"
         android:textColor="@color/white"
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
