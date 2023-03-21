@@ -50,7 +50,7 @@ public class intro_de_datos extends AppCompatActivity {
         String seleccion2 = spinner2.getSelectedItem().toString();
         String seleccion3 = spinner3.getSelectedItem().toString();
 
-        SharedPreferences preferencias = getSharedPreferences("Preferencias", Context.MODE_PRIVATE);
+        SharedPreferences preferencias = getSharedPreferences("MyPrefs", Context.MODE_PRIVATE);
         SharedPreferences.Editor obj_editor = preferencias.edit();
         obj_editor.putString(cadena[0],valor1_string);
         obj_editor.commit();
