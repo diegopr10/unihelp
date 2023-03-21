@@ -6,4 +6,5 @@
     <string name="welcome_text">Bienvenido!</string>
     <string name="settings_text">ESTAS EN LA PANTALLa se ajustes modificada</string>
     <string name="home_text">ESTAS EN LA PANTALLA DE AJUSTES</string>
+    <string name="texto_boton_ajustes">APLICAR CAMBIOS</string>
 </resources>
