@@ -3,7 +3,8 @@
     <style name="Theme.Unihelp" parent="Theme.MaterialComponents.DayNight">
         <!-- Primary brand color. -->
         <item name="colorPrimary">@color/unihelp_second_color</item>
-        <item name="colorPrimaryVariant">@color/purple_700</item>
+        <item name="colorPrimaryVariant">@color/unihelp_second_color</item>
         <item name="colorOnPrimary">@color/white</item>
+        <item name="android:statusBarColor">@color/unihelp_second_color</item>
     </style>
 </resources>

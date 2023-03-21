@@ -2,9 +2,7 @@
 <resources>
     <style name="MyButtonStyle" parent="Widget.AppCompat.Button">
         <item name="android:fontFamily">@font/slackey_regular</item>
-        <!--<item name="android:background">white</item>-->
     </style>
-
     <style name="MyEditTextStyle" parent="Widget.AppCompat.EditText">
         <item name="android:fontFamily">@font/slackey_regular</item>
     </style>
