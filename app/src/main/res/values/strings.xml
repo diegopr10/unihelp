@@ -6,4 +6,17 @@
     <string name="welcome_text">Bienvenido!</string>
     <string name="settings_text">ESTAS EN LA PANTALLa se ajustes modificada</string>
     <string name="home_text">ESTAS EN LA PANTALLA DE AJUSTES</string>
+    <string name="cuentanos_text">CUÉNTANOS SOBRE TI</string>
+    <string name="como_llamas_text">¿Cómo te llamas?</string>
+    <string name="que_estudias_text">¿Qué estudias?</string>
+    <string name="que_curso_text">¿En qué curso estás?</string>
+    <string name="que_idioma_text">¿Qué idioma usas?</string>
+    <string name="next_text">Siguiente</string>
+    <string name="modo_estudio_text">Modo estudio</string>
+    <string name="notas_text">notas</string>
+    <string name="calendario_text">Calendario</string>
+    <string name="links_text">links</string>
+    <string name="alias_text">Alias</string>
+    <string name="level_text">Nivel:</string>
+
 </resources>
