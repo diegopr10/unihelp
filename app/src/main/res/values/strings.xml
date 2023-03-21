@@ -12,6 +12,7 @@
     <string name="que_estudias_text">¿Qué estudias?</string>
     <string name="que_curso_text">¿En qué curso estás?</string>
     <string name="que_idioma_text">¿Qué idioma usas?</string>
+    <string name="cambiar_idioma">Seleccione un idioma</string>
     <string name="next_text">Siguiente</string>
     <string name="modo_estudio_text">Modo estudio</string>
     <string name="notas_text">notas</string>

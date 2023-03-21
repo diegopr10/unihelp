@@ -13,22 +13,35 @@
         android:layout_height="0dp"
         android:layout_weight="1"/>
 
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"/>
-
     <TextView
         android:id="@+id/settings_text"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="0.4"
-        android:text="@string/settings_text"
+        android:textSize="20sp"
+        android:gravity="center"
+        android:text="@string/cambiar_idioma"
         android:textColor="@color/white"
-        android:visibility="visible"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:visibility="visible"/>
+
+    <Spinner
+        android:id="@+id/spinner_prueba"
+        android:layout_width = "match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.3"
+        android:ems="10"
+        android:fontFamily="@font/slackey_regular"
+        android:backgroundTint="@color/white"
+        android:layout_gravity="center"
+        android:inputType="textPersonName"
+        android:singleLine="true"
+        android:textColor="@color/white"
+        android:textSize="20sp"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"/>
 
     <Button
         android:id="@+id/start_button"
