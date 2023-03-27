@@ -32,7 +32,7 @@ public class inicio extends AppCompatActivity {
     }
 
     public void go_to_settings(View view){
-        Intent nuevoIntent = new Intent(this,ModoEstudio.class);
+        Intent nuevoIntent = new Intent(this,Settings.class);
         startActivity(nuevoIntent);
     }
 
