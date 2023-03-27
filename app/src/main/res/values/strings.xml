@@ -1,18 +1,16 @@
 <resources>
+    <!--General-->
     <string name="app_name">Unihelp</string>
-    <string name="button_name">SETTINGS</string>
-    <string name="text_from_resources">What the actual thing</string>
-    <string name="start_text">EMPEZAR</string>
+    <!--Pantalla Bienvenida-->
     <string name="welcome_text">Bienvenido!</string>
-    <string name="settings_text">ESTAS EN LA PANTALLa se ajustes modificada</string>
-    <string name="home_text">ESTAS EN LA PANTALLA DE AJUSTES</string>
-    <string name="texto_boton_ajustes">APLICAR CAMBIOS</string>
+    <string name="start_text">EMPEZAR</string>
+    <!--Pantalla Intro Datos-->
     <string name="cuentanos_text">CUÉNTANOS SOBRE TI</string>
     <string name="como_llamas_text">¿Como te llamas?</string>
     <string name="que_estudias_text">¿Qué estudias?</string>
     <string name="que_curso_text">¿En qué curso estás?</string>
     <string name="que_idioma_text">¿Qué idioma usas?</string>
-    <string name="cambiar_idioma">Seleccione un idioma</string>
+    <!--Pantalla Inicio-->
     <string name="next_text">Siguiente</string>
     <string name="modo_estudio_text">Modo estudio</string>
     <string name="notas_text">notas</string>
@@ -20,5 +18,10 @@
     <string name="links_text">links</string>
     <string name="alias_text">Alias</string>
     <string name="level_text">Nivel:</string>
+    <string name="settings_text">SETTINGS</string>
+    <!--Pantalla Ajustes-->
+    <string name="cambiar_idioma_text">Seleccione un idioma</string>
+    <string name="aplicar_cambios_text">APLICAR CAMBIOS</string>
+
 
 </resources>

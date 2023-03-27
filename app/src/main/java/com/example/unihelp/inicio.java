@@ -35,5 +35,4 @@ public class inicio extends AppCompatActivity {
         Intent nuevoIntent = new Intent(this,Settings.class);
         startActivity(nuevoIntent);
     }
-
 }

@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.widget.ArrayAdapter;
 import android.widget.Spinner;
+import android.view.View;
 import android.widget.TextView;
 
 public class Settings extends AppCompatActivity {
@@ -22,7 +23,7 @@ public class Settings extends AppCompatActivity {
         spinner_prueba.setAdapter(adapter);
     }
 
-    public void goToHome(){
+    public void goToHome(View view){
         Log.d("Sucess","The button works");
         Intent intent = new Intent(this,MainActivity.class);
         startActivity(intent);

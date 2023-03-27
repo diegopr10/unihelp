@@ -20,7 +20,7 @@
         android:layout_weight="0.4"
         android:textSize="20sp"
         android:gravity="center"
-        android:text="@string/cambiar_idioma"
+        android:text="@string/cambiar_idioma_text"
         android:textColor="@color/white"
         android:visibility="visible"/>
 
@@ -51,7 +51,7 @@
         android:layout_weight="0.3"
         android:backgroundTint="@color/white"
         android:onClick="goToHome"
-        android:text="@string/texto_boton_ajustes"
+        android:text="@string/aplicar_cambios_text"
         android:layout_marginRight = "10dp"
         android:layout_marginBottom = "10dp"
         style="@style/MyButtonStyle"/>
