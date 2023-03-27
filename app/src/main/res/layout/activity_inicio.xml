@@ -13,10 +13,10 @@
         android:layout_height="142dp"
         android:layout_marginStart="36dp"
         android:layout_marginTop="68dp"
-        android:background="@color/white"
         android:fontFamily="@font/slackey_regular"
         android:text="@string/modo_estudio_text"
         android:textSize="20sp"
+        android:onClick="go_to_modo_estudio"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/divider" />
 

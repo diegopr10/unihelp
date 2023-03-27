@@ -3,8 +3,10 @@ package com.example.unihelp;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.TextView;
 
 public class inicio extends AppCompatActivity {
@@ -23,4 +25,15 @@ public class inicio extends AppCompatActivity {
 
         alias.setText(cadena_alias);
     }
+
+    public void go_to_modo_estudio(View view){
+        Intent nuevoIntent = new Intent(this,ModoEstudio.class);
+        startActivity(nuevoIntent);
+    }
+
+    public void go_to_settings(View view){
+        Intent nuevoIntent = new Intent(this,ModoEstudio.class);
+        startActivity(nuevoIntent);
+    }
+
 }
