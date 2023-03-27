@@ -20,5 +20,6 @@
     <string name="links_text">links</string>
     <string name="alias_text">Alias</string>
     <string name="level_text">Nivel:</string>
+    <string name="exp_text">Exp:</string>
 
 </resources>

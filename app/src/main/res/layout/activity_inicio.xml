@@ -91,7 +91,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/texto_nivel"
+        android:id="@+id/level_label"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="12dp"
@@ -115,17 +115,42 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/nivel_valor"
+        android:id="@+id/level_value"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/slackey_regular"
         android:text="hey"
         android:textColor="@color/white"
         android:textSize="24sp"
-        app:layout_constraintBaseline_toBaselineOf="@+id/texto_nivel"
+        app:layout_constraintBaseline_toBaselineOf="@+id/level_label"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.318"
-        app:layout_constraintStart_toEndOf="@+id/texto_nivel" />
+        app:layout_constraintStart_toEndOf="@+id/level_label" />
+
+    <TextView
+        android:id="@+id/exp_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="16dp"
+        android:text="@string/exp_text"
+        android:textColor="@color/white"
+        android:textSize="24sp"
+        android:fontFamily="@font/slackey_regular"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView2" />
+
+    <TextView
+        android:id="@+id/exp_value"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:fontFamily="@font/slackey_regular"
+
+        android:textColor="@color/white"
+        android:textSize="24sp"
+        app:layout_constraintBaseline_toBaselineOf="@+id/exp_label"
+        app:layout_constraintStart_toEndOf="@+id/exp_label" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
