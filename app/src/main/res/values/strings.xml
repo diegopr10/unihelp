@@ -10,18 +10,17 @@
     <string name="que_estudias_text">¿Qué estudias?</string>
     <string name="que_curso_text">¿En qué curso estás?</string>
     <string name="que_idioma_text">¿Qué idioma usas?</string>
-    <!--Pantalla Inicio-->
     <string name="next_text">Siguiente</string>
+    <!--Pantalla Inicio-->
     <string name="modo_estudio_text">Modo estudio</string>
     <string name="notas_text">notas</string>
     <string name="calendario_text">Calendario</string>
     <string name="links_text">links</string>
     <string name="alias_text">Alias</string>
     <string name="level_text">Nivel:</string>
+    <string name="exp_text">Exp:</string>
     <string name="settings_text">SETTINGS</string>
     <!--Pantalla Ajustes-->
     <string name="cambiar_idioma_text">Seleccione un idioma</string>
     <string name="aplicar_cambios_text">APLICAR CAMBIOS</string>
-
-
 </resources>
