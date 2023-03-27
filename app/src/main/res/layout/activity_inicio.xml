@@ -94,8 +94,8 @@
         android:id="@+id/texto_nivel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="92dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="120dp"
         android:fontFamily="@font/slackey_regular"
         android:text="@string/level_text"
         android:textColor="@color/white"
@@ -110,8 +110,22 @@
         android:layout_marginTop="4dp"
         android:text="@string/button_name"
         android:onClick="go_to_settings"
+        android:fontFamily="@font/slackey_regular"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/nivel_valor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/slackey_regular"
+        android:text="hey"
+        android:textColor="@color/white"
+        android:textSize="24sp"
+        app:layout_constraintBaseline_toBaselineOf="@+id/texto_nivel"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.318"
+        app:layout_constraintStart_toEndOf="@+id/texto_nivel" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

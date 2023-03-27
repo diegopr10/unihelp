@@ -45,6 +45,10 @@ public class intro_de_datos extends AppCompatActivity {
     public void siguiente(View view){
         String[] cadena = {"alias","carrera","curso","idioma"};
 
+        int nivel = 1;
+        int experiencia = 0;
+
+
         String valor1_string = et1.getText().toString();
         String seleccion1 = spinner1.getSelectedItem().toString();
         String seleccion2 = spinner2.getSelectedItem().toString();
@@ -61,6 +65,12 @@ public class intro_de_datos extends AppCompatActivity {
         obj_editor.commit();
 
         obj_editor.putString(cadena[3],seleccion3);
+        obj_editor.commit();
+
+        obj_editor.putInt("nivel",nivel);
+        obj_editor.commit();
+
+        obj_editor.putInt("experiencia",experiencia);
         obj_editor.commit();
 
         //Pone isFirstTime a false para que no vuelva a aparecer en el cuestionario al iniciar la app.
