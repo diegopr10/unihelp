@@ -56,22 +56,22 @@ public class intro_de_datos extends AppCompatActivity {
 
         SharedPreferences.Editor obj_editor = myPrefs.edit();
         obj_editor.putString(cadena[0],valor1_string);
-        obj_editor.commit();
+        obj_editor.apply();
 
         obj_editor.putString(cadena[1],seleccion1);
-        obj_editor.commit();
+        obj_editor.apply();
 
         obj_editor.putString(cadena[2],seleccion2);
-        obj_editor.commit();
+        obj_editor.apply();
 
         obj_editor.putString(cadena[3],seleccion3);
-        obj_editor.commit();
+        obj_editor.apply();
 
         obj_editor.putInt("nivel",nivel);
-        obj_editor.commit();
+        obj_editor.apply();
 
         obj_editor.putInt("experiencia",experiencia);
-        obj_editor.commit();
+        obj_editor.apply();
 
         //Pone isFirstTime a false para que no vuelva a aparecer en el cuestionario al iniciar la app.
         //Luego le lleva a la pantalla de inicio mediante un intent.
