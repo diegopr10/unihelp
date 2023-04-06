@@ -1,6 +1,7 @@
 package com.example.unihelp;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.preference.PreferenceScreen;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -21,6 +22,11 @@ public class Settings extends AppCompatActivity implements SharedPreferences.OnS
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_settings);
         setTitle("Settings");
+
+        getSupportFragmentManager()
+                .beginTransaction()
+                .replace(R.id.preference_screen_container, new PreferenceFragment())
+                .commit();
 
         myPrefs = getSharedPreferences("MyPrefs", MODE_PRIVATE);
         myPrefs.registerOnSharedPreferenceChangeListener(this);
