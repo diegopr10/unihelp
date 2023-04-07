@@ -1,15 +1,17 @@
 package com.example.unihelp;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.preference.EditTextPreference;
 import androidx.preference.PreferenceScreen;
+
+import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
 import android.widget.EditText;
 import android.view.View;
-import android.text.TextWatcher;
-import android.text.Editable;
+import androidx.preference.PreferenceManager;
 import android.widget.Toast;
 
 public class Settings extends AppCompatActivity implements SharedPreferences.OnSharedPreferenceChangeListener{
@@ -23,30 +25,28 @@ public class Settings extends AppCompatActivity implements SharedPreferences.OnS
         setContentView(R.layout.activity_settings);
         setTitle("Settings");
 
-        getSupportFragmentManager()
-                .beginTransaction()
-                .replace(R.id.preference_screen_container, new PreferenceFragment())
+        // Create a new instance of the PreferenceFragment
+        PreferenceFragment fragment = new PreferenceFragment();
+
+        // Add the fragment to the activity's LinearLayout container
+        getSupportFragmentManager().beginTransaction()
+                .add(R.id.preference_screen_container, fragment)
                 .commit();
-
-        myPrefs = getSharedPreferences("MyPrefs", MODE_PRIVATE);
-        myPrefs.registerOnSharedPreferenceChangeListener(this);
     }
 
-    public void goToHome(View view){
-        Log.d("Sucess","The button works");
-        Intent intent = new Intent(this,inicio.class);
+    public void goToHome(View view) {
+        Log.d("Sucess", "The button works");
+
+        myPrefs = getSharedPreferences("MyPrefs",MODE_PRIVATE);
+        String new_name = myPrefs.getString("alias", "jaja");
+        Toast.makeText(this,"Ahora tu nombre es: " + new_name,Toast.LENGTH_LONG).show();
+
+        Intent intent = new Intent(this, inicio.class);
         startActivity(intent);
-
-        EditText editText = findViewById(R.id.changeName);
-        String new_alias = editText.getText().toString();
-        if(!new_alias.equals(alias)){//Si el alias cambia
-            myPrefs.edit().putString("alias", new_alias).apply();
-        }
     }
+
     @Override
-    public void onSharedPreferenceChanged(SharedPreferences sharedPreferences, String key) {
-        if(key.equals("alias")){
-            Toast.makeText(this.getApplicationContext(), "Tu alias ha cambiado", Toast.LENGTH_LONG).show();
-        }
+    public void onSharedPreferenceChanged(SharedPreferences sharedPreferences, String s) {
+
     }
 }

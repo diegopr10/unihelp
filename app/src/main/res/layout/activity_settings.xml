@@ -14,29 +14,6 @@
         android:layout_height="0dp"
         android:layout_weight="0.2"/>
 
-    <TextView
-        android:id="@+id/settings_text"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="0.3"
-        android:textSize="20sp"
-        android:gravity="center"
-        android:text="@string/cambiar_nombre_text"
-        android:textColor="@color/white"
-        android:visibility="visible"/>
-
-    <EditText
-        android:id="@+id/changeName"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="0.3"
-        android:textColor="@color/white"
-        android:hint="Tu Alias"
-        android:gravity="center"
-        android:textSize="20sp"
-        android:inputType="text"
-        android:imeOptions="actionDone"/>
-
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="0dp"
