@@ -68,11 +68,12 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
-        android:id="@+id/imageView2"
+        android:id="@+id/fotoDePerfil"
         android:layout_width="142dp"
         android:layout_height="122dp"
         android:layout_marginStart="36dp"
         android:layout_marginTop="28dp"
+        android:tag="1"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/nofoto" />
@@ -87,7 +88,7 @@
         android:text="@string/alias_text"
         android:textColor="@color/white"
         android:textSize="24sp"
-        app:layout_constraintStart_toEndOf="@+id/imageView2"
+        app:layout_constraintStart_toEndOf="@+id/fotoDePerfil"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
@@ -138,7 +139,7 @@
         android:textSize="24sp"
         android:fontFamily="@font/slackey_regular"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView2" />
+        app:layout_constraintTop_toBottomOf="@+id/fotoDePerfil" />
 
     <TextView
         android:id="@+id/exp_value"
