@@ -8,7 +8,7 @@
     tools:context=".intro_de_datos">
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/cuentanos_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="28dp"
@@ -22,7 +22,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/textView3"
+        android:id="@+id/comoTeLlamas_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="60dp"
@@ -33,7 +33,7 @@
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView2" />
+        app:layout_constraintTop_toBottomOf="@id/cuentanos_text" />
 
     <EditText
         android:id="@+id/campo_nombre"
@@ -50,10 +50,10 @@
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView3" />
+        app:layout_constraintTop_toBottomOf="@id/comoTeLlamas_text"/>
 
     <TextView
-        android:id="@+id/textView4"
+        android:id="@+id/queEstudias_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="28dp"
@@ -63,12 +63,12 @@
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/campo_nombre" />
+        app:layout_constraintTop_toBottomOf="@id/campo_nombre" />
 
     <Spinner
-        android:id="@+id/spinner1"
+        android:id="@+id/spinner_carreras"
         android:layout_width="321dp"
-        android:layout_height="37dp"
+        android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:ems="10"
         android:fontFamily="@font/slackey_regular"
@@ -79,10 +79,10 @@
 
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView4" />
+        app:layout_constraintTop_toBottomOf="@id/queEstudias_text" />
 
     <TextView
-        android:id="@+id/textView5"
+        android:id="@+id/queCurso_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="28dp"
@@ -92,12 +92,12 @@
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/spinner1" />
+        app:layout_constraintTop_toBottomOf="@id/spinner_carreras" />
 
     <Spinner
-        android:id="@+id/spinner2"
+        android:id="@+id/spinner_curso"
         android:layout_width="321dp"
-        android:layout_height="37dp"
+        android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
         android:ems="10"
         android:fontFamily="@font/slackey_regular"
@@ -108,10 +108,10 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.49"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView5" />
+        app:layout_constraintTop_toBottomOf="@id/queCurso_text" />
 
     <TextView
-        android:id="@+id/textView6"
+        android:id="@+id/queIdioma_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="28dp"
@@ -122,12 +122,12 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.588"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/spinner2" />
+        app:layout_constraintTop_toBottomOf="@id/spinner_curso" />
 
     <Spinner
-        android:id="@+id/spinner3"
+        android:id="@+id/spinner_idioma"
         android:layout_width="321dp"
-        android:layout_height="37dp"
+        android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
         android:ems="10"
         android:fontFamily="@font/slackey_regular"
@@ -138,10 +138,10 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.49"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView6" />
+        app:layout_constraintTop_toBottomOf="@id/queIdioma_text" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/button_siguiente"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="32dp"

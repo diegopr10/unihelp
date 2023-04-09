@@ -23,9 +23,9 @@ public class intro_de_datos extends AppCompatActivity {
         setContentView(R.layout.activity_intro_de_datos);
         myPrefs = getSharedPreferences("MyPrefs", MODE_PRIVATE);
 
-        spinner1 = (Spinner) findViewById(R.id.spinner1);
-        spinner2 = (Spinner) findViewById(R.id.spinner2);
-        spinner3 = (Spinner) findViewById(R.id.spinner3);
+        spinner1 = (Spinner) findViewById(R.id.spinner_carreras);
+        spinner2 = (Spinner) findViewById(R.id.spinner_curso);
+        spinner3 = (Spinner) findViewById(R.id.spinner_idioma);
         et1 = (EditText)findViewById(R.id.campo_nombre);
 
         String [] opciones1 = {"Sonido e Imagen","Teleco","Telemática","Espaciales"};
@@ -76,7 +76,7 @@ public class intro_de_datos extends AppCompatActivity {
         //Pone isFirstTime a false para que no vuelva a aparecer en el cuestionario al iniciar la app.
         //Luego le lleva a la pantalla de inicio mediante un intent.
         myPrefs.edit().putBoolean("isFirstTime", false).apply();
-        Intent intent = new Intent(this,inicio.class);
+        Intent intent = new Intent(this,intro_ambito_bueno.class);
         startActivity(intent);
         finish();
     }

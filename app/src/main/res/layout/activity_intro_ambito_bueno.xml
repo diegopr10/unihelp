@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/unihelp_color"
+    tools:context=".intro_ambito_bueno">
+
+
+    <TextView
+        android:id="@+id/pregunta_mejor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="¿De los principales ambitos que se encuentran en las telecomunicaciones, cuál se te da mejor?"
+        android:fontFamily="@font/slackey_regular"
+        android:textColor="@color/white"
+        android:textSize="28sp"
+        android:layout_marginTop="20dp"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:gravity="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Spinner
+        android:id="@+id/spinner_mejorAmbito"
+        android:layout_width="321dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="56dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/pregunta_mejor" />
+
+    <TextView
+        android:id="@+id/pregunta_peor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="56dp"
+        android:fontFamily="@font/slackey_regular"
+        android:gravity="center"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:text="Y de dichos ambitos, ¿Cual se te da peor?"
+        android:textColor="@color/white"
+        android:textSize="28sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/spinner_mejorAmbito" />
+
+    <Spinner
+        android:id="@+id/spinner_PeorAmbito"
+        android:layout_width="321dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="56dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/pregunta_peor" />
+
+    <Button
+        android:id="@+id/button_siguiente2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@color/unihelp_second_color"
+        android:fontFamily="@font/slackey_regular"
+        android:text="@string/next_text"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginBottom="4dp"
+        android:onClick="siguiente2"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
