@@ -9,6 +9,9 @@ import androidx.room.Update;
 
 import java.util.List;
 
+
+@Dao
+
 public interface AsignaturaDao {
     @Query("SELECT * FROM Asignatura")
     List<Asignatura> selectAll();
