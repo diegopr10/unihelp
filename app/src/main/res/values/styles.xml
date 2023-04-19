@@ -7,5 +7,6 @@
     <style name="MyEditTextStyle" parent="Widget.AppCompat.EditText">
         <item name="android:fontFamily">@font/slackey_regular</item>
     </style>
+    
 
 </resources>

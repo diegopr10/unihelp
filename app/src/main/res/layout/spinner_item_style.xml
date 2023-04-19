@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--Esto es para poder cambiar las características de los items del desplegable del spinner -->
+<TextView
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:textSize="18sp"
+    android:padding="10sp"
+    android:textColor="@color/white"
+    android:background="@color/unihelp_color"
+    android:fontFamily="@font/slackey_regular"
+    xmlns:android="http://schemas.android.com/apk/res/android"/>
+

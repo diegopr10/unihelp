@@ -32,13 +32,13 @@ public class intro_de_datos extends AppCompatActivity {
         String [] opciones2 = {"Primero.","Segundo.","Tercero.","Cuarto"};
         String [] opciones3 = {"Español","Inglés"};
 
-        ArrayAdapter<String> adapter1 = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_dropdown_item, opciones1);
+        ArrayAdapter<String> adapter1 = new ArrayAdapter<String>(this, R.layout.spinner_item_style, opciones1);
         spinner1.setAdapter(adapter1);
 
-        ArrayAdapter<String> adapter2 = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_dropdown_item, opciones2);
+        ArrayAdapter<String> adapter2 = new ArrayAdapter<String>(this, R.layout.spinner_item_style, opciones2);
         spinner2.setAdapter(adapter2);
 
-        ArrayAdapter<String> adapter3 = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_dropdown_item, opciones3);
+        ArrayAdapter<String> adapter3 = new ArrayAdapter<String>(this, R.layout.spinner_item_style, opciones3);
         spinner3.setAdapter(adapter3);
     }
 

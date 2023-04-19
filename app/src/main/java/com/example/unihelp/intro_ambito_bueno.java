@@ -28,10 +28,10 @@ public class intro_ambito_bueno extends AppCompatActivity {
         //Aunque sean dos arrays iguales, he puesto dos porque en principio no sé si al hacer un arrayadapter coge una referencia o el valor como tal
         String [] stringDeAmbitos2 = {"Programacion","Sistemas","Circuitos","Redes"};
 
-        ArrayAdapter<String> adapter1 = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_dropdown_item, stringDeAmbitos);
+        ArrayAdapter<String> adapter1 = new ArrayAdapter<String>(this, R.layout.spinner_item_style, stringDeAmbitos);
         spinnerMejorAmbito.setAdapter(adapter1);
 
-        ArrayAdapter<String> adapter2 = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_dropdown_item, stringDeAmbitos);
+        ArrayAdapter<String> adapter2 = new ArrayAdapter<String>(this, R.layout.spinner_item_style, stringDeAmbitos);
         spinnerPeorAmbito.setAdapter(adapter2);
 
 
