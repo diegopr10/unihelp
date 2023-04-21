@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/unihelp_color"
-    tools:context=".intro_ambito_bueno">
+    tools:context=".intro_asignaturas_principales">
 
 
     <TextView

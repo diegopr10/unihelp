@@ -2,7 +2,6 @@ package com.example.unihelp;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -76,7 +75,7 @@ public class intro_de_datos extends AppCompatActivity {
         //Pone isFirstTime a false para que no vuelva a aparecer en el cuestionario al iniciar la app.
         //Luego le lleva a la pantalla de inicio mediante un intent.
         myPrefs.edit().putBoolean("isFirstTime", false).apply();
-        Intent intent = new Intent(this,intro_ambito_bueno.class);
+        Intent intent = new Intent(this, intro_asignaturas_principales.class);
         startActivity(intent);
         finish();
     }

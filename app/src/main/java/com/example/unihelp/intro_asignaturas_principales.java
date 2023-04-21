@@ -9,7 +9,7 @@ import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Spinner;
 
-public class intro_ambito_bueno extends AppCompatActivity {
+public class intro_asignaturas_principales extends AppCompatActivity {
 
     private SharedPreferences myPrefs;
     private Spinner spinnerMejorAmbito,spinnerPeorAmbito;
@@ -17,7 +17,7 @@ public class intro_ambito_bueno extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_intro_ambito_bueno);
+        setContentView(R.layout.activity_intro_asignaturas_principales);
 
         spinnerMejorAmbito = (Spinner) findViewById(R.id.spinner_mejorAmbito);
         spinnerPeorAmbito = (Spinner) findViewById(R.id.spinner_PeorAmbito);
