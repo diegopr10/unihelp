@@ -6,9 +6,9 @@ import androidx.room.Database;
 import androidx.room.Room;
 import androidx.room.RoomDatabase;
 
-@Database(entities = {Asignatura.class}, version = 1)
+@Database(entities = {Asignatura.class,Optativa.class}, version = 1)
 public abstract class BaseDeDatos extends RoomDatabase {
-    private static final String PRELOADED_DATABASE_FILE = "preloaded-database.db";
+    private static final String PRELOADED_DATABASE_FILE = "basededatos-precargada.db";
     private static final String DB_NAME = "my-database.db";
     private static volatile BaseDeDatos instance;
 

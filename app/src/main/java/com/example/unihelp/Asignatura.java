@@ -18,21 +18,21 @@ public class Asignatura {
     @ColumnInfo(name = "curso")
     public String curso;
 
-    @ColumnInfo(name = "ambito")
+    @ColumnInfo(name = "dificultad")
     public String ambito;
 
-    public Asignatura(long id, String nombre, String curso, String ambito) {
+    public Asignatura(long id, String nombre, String curso, String dificultad) {
         this.id = id;
         this.nombre = nombre;
         this.curso= curso;
-        this.ambito=ambito;
+        this.ambito=dificultad;
     }
 
     @Ignore
-    public Asignatura(String nombre, String curso, String ambito) {
+    public Asignatura(String nombre, String curso, String dificultad) {
         this.nombre = nombre;
         this.curso= curso;
-        this.ambito=ambito;
+        this.ambito=dificultad;
 
     }
 
