@@ -29,7 +29,7 @@ public class intro_de_datos extends AppCompatActivity {
 
         String [] opciones1 = {"Sonido e Imagen","Teleco","Telemática","Espaciales"};
         String [] opciones2 = {"Primero.","Segundo.","Tercero.","Cuarto"};
-        String [] opciones3 = {"Español","Inglés"};
+        String [] opciones3 = {"Primero","Segundo"};
 
         ArrayAdapter<String> adapter1 = new ArrayAdapter<String>(this, R.layout.spinner_item_style, opciones1);
         spinner1.setAdapter(adapter1);

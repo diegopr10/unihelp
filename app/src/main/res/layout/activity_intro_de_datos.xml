@@ -117,7 +117,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="28dp"
         android:fontFamily="@font/slackey_regular"
-        android:text="@string/que_idioma_text"
+        android:text="@string/que_cuatri"
         android:textColor="@color/white"
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"

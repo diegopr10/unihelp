@@ -7,72 +7,215 @@
     android:background="@color/unihelp_color"
     tools:context=".intro_asignaturas_principales">
 
-
     <TextView
-        android:id="@+id/pregunta_mejor"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="¿De los principales ambitos que se encuentran en las telecomunicaciones, cuál se te da mejor?"
+        android:id="@+id/como_se_te_dan"
+        android:layout_width="306dp"
+        android:layout_height="71dp"
+        android:layout_marginTop="4dp"
         android:fontFamily="@font/slackey_regular"
+        android:text="¿Cómo se te dan las asignaturas?"
         android:textColor="@color/white"
-        android:textSize="28sp"
-        android:layout_marginTop="20dp"
-        android:paddingLeft="20dp"
-        android:paddingRight="20dp"
-        android:gravity="center"
+        android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.494"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <Spinner
-        android:id="@+id/spinner_mejorAmbito"
-        android:layout_width="321dp"
+    <TextView
+        android:id="@+id/asignatura1"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="56dp"
+        android:layout_marginTop="16dp"
+        android:fontFamily="@font/slackey_regular"
+        android:text="texto"
+        android:textColor="@color/white"
+        android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/pregunta_mejor" />
+        app:layout_constraintTop_toBottomOf="@id/como_se_te_dan" />
+
+    <Spinner
+        android:id="@+id/spinner_asignatura1"
+        android:layout_width="321dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:ems="10"
+        android:fontFamily="@font/slackey_regular"
+        android:inputType="textPersonName"
+        android:singleLine="true"
+        android:textColor="@color/white"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/asignatura1" />
 
     <TextView
-        android:id="@+id/pregunta_peor"
+        android:id="@+id/asignatura2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="56dp"
+        android:layout_marginTop="16dp"
         android:fontFamily="@font/slackey_regular"
-        android:gravity="center"
-        android:paddingLeft="20dp"
-        android:paddingRight="20dp"
-        android:text="Y de dichos ambitos, ¿Cual se te da peor?"
+        android:text="texto"
         android:textColor="@color/white"
-        android:textSize="28sp"
+        android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/spinner_mejorAmbito" />
+        app:layout_constraintTop_toBottomOf="@id/spinner_asignatura1" />
 
     <Spinner
-        android:id="@+id/spinner_PeorAmbito"
+        android:id="@+id/spinner_asignatura2"
         android:layout_width="321dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="56dp"
+        android:layout_marginTop="12dp"
+        android:ems="10"
+        android:fontFamily="@font/slackey_regular"
+        android:inputType="textPersonName"
+        android:singleLine="true"
+        android:textColor="@color/white"
+        android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/pregunta_peor" />
+        app:layout_constraintTop_toBottomOf="@id/asignatura2" />
 
-    <Button
-        android:id="@+id/button_siguiente2"
+    <TextView
+        android:id="@+id/asignatura3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="@color/unihelp_second_color"
+        android:layout_marginTop="16dp"
         android:fontFamily="@font/slackey_regular"
-        android:text="@string/next_text"
+        android:text="texto"
         android:textColor="@color/white"
-        android:textSize="18sp"
-        android:layout_marginEnd="32dp"
-        android:layout_marginBottom="4dp"
-        android:onClick="siguiente2"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/spinner_asignatura2" />
+
+    <Spinner
+        android:id="@+id/spinner_asignatura3"
+        android:layout_width="321dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:ems="10"
+        android:fontFamily="@font/slackey_regular"
+        android:inputType="textPersonName"
+        android:singleLine="true"
+        android:textColor="@color/white"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/asignatura3" />
+
+    <TextView
+        android:id="@+id/asignatura4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:fontFamily="@font/slackey_regular"
+        android:text="texto"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/spinner_asignatura3" />
+
+    <Spinner
+        android:id="@+id/spinner_asignatura4"
+        android:layout_width="321dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:ems="10"
+        android:fontFamily="@font/slackey_regular"
+        android:inputType="textPersonName"
+        android:singleLine="true"
+        android:textColor="@color/white"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/asignatura4" />
+
+    <TextView
+        android:id="@+id/asignatura5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:fontFamily="@font/slackey_regular"
+        android:text="texto"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/spinner_asignatura4" />
+
+    <Spinner
+        android:id="@+id/spinner_asignatura5"
+        android:layout_width="321dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:ems="10"
+        android:fontFamily="@font/slackey_regular"
+        android:inputType="textPersonName"
+        android:singleLine="true"
+        android:textColor="@color/white"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/asignatura5" />
+
+    <TextView
+        android:id="@+id/asignatura6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:fontFamily="@font/slackey_regular"
+        android:text="texto"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/spinner_asignatura5" />
+
+    <Spinner
+        android:id="@+id/spinner_asignatura6"
+        android:layout_width="321dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:ems="10"
+        android:fontFamily="@font/slackey_regular"
+        android:inputType="textPersonName"
+        android:singleLine="true"
+        android:textColor="@color/white"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/asignatura6" />
+
+    <TextView
+        android:id="@+id/asignatura7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:fontFamily="@font/slackey_regular"
+        android:text="texto"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/spinner_asignatura6" />
+
+    <Spinner
+        android:id="@+id/spinner_asignatura7"
+        android:layout_width="321dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:ems="10"
+        android:fontFamily="@font/slackey_regular"
+        android:inputType="textPersonName"
+        android:singleLine="true"
+        android:textColor="@color/white"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/asignatura7" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
