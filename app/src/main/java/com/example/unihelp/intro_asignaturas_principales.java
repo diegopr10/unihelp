@@ -12,7 +12,7 @@ import android.widget.Spinner;
 public class intro_asignaturas_principales extends AppCompatActivity {
 
     private SharedPreferences myPrefs;
-
+    private Spinner spinnerMejorAmbito,spinnerPeorAmbito;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,5 +24,16 @@ public class intro_asignaturas_principales extends AppCompatActivity {
 
     }
 
+    public void siguiente2(View view) {
 
+
+
+        Intent intent = new Intent(this,inicio.class);
+        startActivity(intent);
+
+
+        finish();
+
+
+    }
 }
