@@ -72,29 +72,7 @@ public class intro_asignaturas_principales extends AppCompatActivity {
         spinnerAsig6.setAdapter(adapter1);
         spinnerAsig7.setAdapter(adapter1);
 
-/*
-        este código lo he dejado comentado por si acaso diera problemas lo que tengo arriba puesta(podeis ingorarlo totalmente de momento)
-        ArrayAdapter<String> adapter1 = new ArrayAdapter<String>(this, R.layout.spinner_item_style, opciones_de_dificultad);
-        spinnerAsig1.setAdapter(adapter1);
 
-        ArrayAdapter<String> adapter2 = new ArrayAdapter<String>(this, R.layout.spinner_item_style, opciones_de_dificultad);
-        spinnerAsig2.setAdapter(adapter2);
-
-        ArrayAdapter<String> adapter3 = new ArrayAdapter<String>(this, R.layout.spinner_item_style, opciones_de_dificultad);
-        spinnerAsig3.setAdapter(adapter3);
-
-        ArrayAdapter<String> adapter4 = new ArrayAdapter<String>(this, R.layout.spinner_item_style, opciones_de_dificultad);
-        spinnerAsig4.setAdapter(adapter4);
-
-        ArrayAdapter<String> adapter5 = new ArrayAdapter<String>(this, R.layout.spinner_item_style, opciones_de_dificultad);
-        spinnerAsig5.setAdapter(adapter5);
-
-        ArrayAdapter<String> adapter6 = new ArrayAdapter<String>(this, R.layout.spinner_item_style, opciones_de_dificultad);
-        spinnerAsig6.setAdapter(adapter6);
-
-        ArrayAdapter<String> adapter7 = new ArrayAdapter<String>(this, R.layout.spinner_item_style, opciones_de_dificultad);
-        spinnerAsig7.setAdapter(adapter7);
-*/
 
         //En estos if, else if y else, lo que hago es comprobar el tamaño de la lista que obtengo de la base de datos, debido a que
         //en los cursos de nuestra carrera (suponiendo que tenemos solamente asignaturas del mismo curso) podemos tener entre 5 y 7 asignaturas
