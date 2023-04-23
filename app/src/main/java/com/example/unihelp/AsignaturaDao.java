@@ -6,6 +6,7 @@ import androidx.room.Insert;
 import androidx.room.Query;
 import androidx.room.Update;
 
+
 import java.util.List;
 
 @Dao
@@ -15,6 +16,9 @@ public interface AsignaturaDao {
 
     @Query("SELECT * FROM Asignatura WHERE id=:id")
     Asignatura selectById(long id);
+
+    @Query("SELECT * FROM Asignatura WHERE curso=:curso AND cuatrimestre=:cuatrimestre")
+    List<Asignatura> selectByCursoAndCuatri(long curso, long cuatrimestre);
 
     @Query("SELECT * FROM Asignatura WHERE nombre LIKE :nombre LIMIT 1")
     Asignatura selectByNombre(String nombre);

@@ -8,16 +8,134 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Spinner;
+import android.widget.TextView;
+
+import java.util.List;
 
 public class intro_asignaturas_principales extends AppCompatActivity {
 
-    private SharedPreferences myPrefs;
-    private Spinner spinnerMejorAmbito,spinnerPeorAmbito;
+    private SharedPreferences preferencias;
+
+    private Spinner spinnerAsig1,spinnerAsig2,spinnerAsig3,spinnerAsig4,spinnerAsig5,spinnerAsig6,spinnerAsig7;
+
+    private TextView textAsig1,textAsig2,textAsig3,textAsig4,textAsig5,textAsig6,textAsig7;
+
+
+    private BaseDeDatos db;
+
+    private long numero_curso;
+
+    private long numero_cuatrimestre;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_intro_asignaturas_principales);
+
+        preferencias = getSharedPreferences("MyPrefs", MODE_PRIVATE);
+        numero_curso = preferencias.getLong("curso",0);
+        numero_cuatrimestre = preferencias.getLong("cuatrimestre",0);
+
+
+        db=BaseDeDatos.getInstance(getApplicationContext());
+
+        //aqui lo que hago es usar una "función" de sql que he definidido en el dao de la asignatura
+        //la cual nos devuelve las asignaturas que coincidan con el curso y el cuatrimestre introducido en los spinners
+        //de la pantalla de intro de datos
+        List<Asignatura> asignaturaList = db.asignaturaDao().selectByCursoAndCuatri(numero_curso,numero_cuatrimestre);
+
+        textAsig1=(TextView) findViewById(R.id.asignatura1);
+        textAsig2=(TextView) findViewById(R.id.asignatura2);
+        textAsig3=(TextView) findViewById(R.id.asignatura3);
+        textAsig4=(TextView) findViewById(R.id.asignatura4);
+        textAsig5=(TextView) findViewById(R.id.asignatura5);
+        textAsig6=(TextView) findViewById(R.id.asignatura6);
+        textAsig7=(TextView) findViewById(R.id.asignatura7);
+
+        spinnerAsig1=(Spinner) findViewById(R.id.spinner_asignatura1);
+        spinnerAsig2=(Spinner) findViewById(R.id.spinner_asignatura2);
+        spinnerAsig3=(Spinner) findViewById(R.id.spinner_asignatura3);
+        spinnerAsig4=(Spinner) findViewById(R.id.spinner_asignatura4);
+        spinnerAsig5=(Spinner) findViewById(R.id.spinner_asignatura5);
+        spinnerAsig6=(Spinner) findViewById(R.id.spinner_asignatura6);
+        spinnerAsig7=(Spinner) findViewById(R.id.spinner_asignatura7);
+
+        //aqui sencillamente defino el adaptador para todos los spinners de dificultad de cada asigantura
+        String [] opciones_de_dificultad = {"Bien","Regular","Mal"};
+
+        ArrayAdapter<String> adapter1 = new ArrayAdapter<String>(this, R.layout.spinner_item_style, opciones_de_dificultad);
+        spinnerAsig1.setAdapter(adapter1);
+        spinnerAsig2.setAdapter(adapter1);
+        spinnerAsig3.setAdapter(adapter1);
+        spinnerAsig4.setAdapter(adapter1);
+        spinnerAsig5.setAdapter(adapter1);
+        spinnerAsig6.setAdapter(adapter1);
+        spinnerAsig7.setAdapter(adapter1);
+
+/*
+        este código lo he dejado comentado por si acaso diera problemas lo que tengo arriba puesta(podeis ingorarlo totalmente de momento)
+        ArrayAdapter<String> adapter1 = new ArrayAdapter<String>(this, R.layout.spinner_item_style, opciones_de_dificultad);
+        spinnerAsig1.setAdapter(adapter1);
+
+        ArrayAdapter<String> adapter2 = new ArrayAdapter<String>(this, R.layout.spinner_item_style, opciones_de_dificultad);
+        spinnerAsig2.setAdapter(adapter2);
+
+        ArrayAdapter<String> adapter3 = new ArrayAdapter<String>(this, R.layout.spinner_item_style, opciones_de_dificultad);
+        spinnerAsig3.setAdapter(adapter3);
+
+        ArrayAdapter<String> adapter4 = new ArrayAdapter<String>(this, R.layout.spinner_item_style, opciones_de_dificultad);
+        spinnerAsig4.setAdapter(adapter4);
+
+        ArrayAdapter<String> adapter5 = new ArrayAdapter<String>(this, R.layout.spinner_item_style, opciones_de_dificultad);
+        spinnerAsig5.setAdapter(adapter5);
+
+        ArrayAdapter<String> adapter6 = new ArrayAdapter<String>(this, R.layout.spinner_item_style, opciones_de_dificultad);
+        spinnerAsig6.setAdapter(adapter6);
+
+        ArrayAdapter<String> adapter7 = new ArrayAdapter<String>(this, R.layout.spinner_item_style, opciones_de_dificultad);
+        spinnerAsig7.setAdapter(adapter7);
+*/
+
+        //En estos if, else if y else, lo que hago es comprobar el tamaño de la lista que obtengo de la base de datos, debido a que
+        //en los cursos de nuestra carrera (suponiendo que tenemos solamente asignaturas del mismo curso) podemos tener entre 5 y 7 asignaturas
+        //entonces en los casos en los que haya menos de 7 asignaturas, oculto el sexto y/o séptimo spinner
+        if(asignaturaList.size()==5){
+            textAsig6.setVisibility(View.GONE);
+            textAsig7.setVisibility(View.GONE);
+            spinnerAsig6.setVisibility(View.GONE);
+            spinnerAsig7.setVisibility(View.GONE);
+
+            textAsig1.setText(asignaturaList.get(0).nombre);
+            textAsig2.setText(asignaturaList.get(1).nombre);
+            textAsig3.setText(asignaturaList.get(2).nombre);
+            textAsig4.setText(asignaturaList.get(3).nombre);
+            textAsig5.setText(asignaturaList.get(4).nombre);
+        }
+        else if(asignaturaList.size()==6){
+
+            textAsig7.setVisibility(View.GONE);
+            spinnerAsig7.setVisibility(View.GONE);
+
+            textAsig1.setText(asignaturaList.get(0).nombre);
+            textAsig2.setText(asignaturaList.get(1).nombre);
+            textAsig3.setText(asignaturaList.get(2).nombre);
+            textAsig4.setText(asignaturaList.get(3).nombre);
+            textAsig5.setText(asignaturaList.get(4).nombre);
+            textAsig6.setText(asignaturaList.get(5).nombre);
+
+        }
+
+        else{
+            textAsig1.setText(asignaturaList.get(0).nombre);
+            textAsig2.setText(asignaturaList.get(1).nombre);
+            textAsig3.setText(asignaturaList.get(2).nombre);
+            textAsig4.setText(asignaturaList.get(3).nombre);
+            textAsig5.setText(asignaturaList.get(4).nombre);
+            textAsig6.setText(asignaturaList.get(5).nombre);
+            textAsig7.setText(asignaturaList.get(6).nombre);
+        }
+
+
 
 
 
@@ -25,8 +143,6 @@ public class intro_asignaturas_principales extends AppCompatActivity {
     }
 
     public void siguiente2(View view) {
-
-
 
         Intent intent = new Intent(this,inicio.class);
         startActivity(intent);

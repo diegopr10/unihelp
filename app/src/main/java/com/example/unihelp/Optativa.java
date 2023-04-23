@@ -28,8 +28,5 @@ public class Optativa {
 
     }
 
-    @Override
-    public String toString() {
-        return nombre;
-    }
+
 }

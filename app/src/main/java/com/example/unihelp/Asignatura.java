@@ -15,23 +15,28 @@ public class Asignatura {
     public String nombre;
 
     @ColumnInfo(name = "curso")
-    public String curso;
+    public long curso;
 
     @ColumnInfo(name = "dificultad")
     public String dificultad;
 
-    public Asignatura(long id, String nombre, String curso, String dificultad) {
+    @ColumnInfo(name = "cuatrimestre")
+    public long cuatrimestre;
+
+    public Asignatura(long id, String nombre, long curso, String dificultad,long cuatrimestre) {
         this.id = id;
         this.nombre = nombre;
         this.curso = curso;
         this.dificultad = dificultad;
+        this.cuatrimestre=cuatrimestre;
     }
 
     @Ignore
-    public Asignatura(String nombre, String curso, String dificultad) {
+    public Asignatura(String nombre, long curso, String dificultad,long cuatrimestre) {
         this.nombre = nombre;
         this.curso = curso;
         this.dificultad = dificultad;
+        this.cuatrimestre=cuatrimestre;
     }
 
     @Override

@@ -14,10 +14,10 @@ public interface OptativaDao {
     List<Optativa> selectAll();
 
     @Query("SELECT * FROM Optativa WHERE id=:id")
-    Asignatura selectById(long id);
+    Optativa selectById(long id);
 
     @Query("SELECT * FROM Optativa WHERE nombre LIKE :nombre LIMIT 1")
-    Asignatura selectByNombre(String nombre);
+    Optativa selectByNombre(String nombre);
 
     @Insert
     long insert(Optativa optativa);
