@@ -1,34 +1,53 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
-    <EditTextPreference
-        android:defaultValue=""
-        android:key="alias"
-        android:title="@string/pref_title_name" />
 
-    <ListPreference
-        android:entries="@array/roleKeys"
-        android:entryValues="@array/roleValues"
-        android:key="role"
-        android:title="@string/pref_title_role" />
+    <PreferenceCategory android:title="@string/user_settings">
+        <EditTextPreference
+            android:defaultValue=""
+            android:key="alias"
+            android:title="@string/pref_title_name"
+            android:textColor="@color/white"/>
 
-    <PreferenceCategory android:title="@string/pref_title_prog_lang">
+        <ListPreference
+            android:entries="@array/degreeKeys"
+            android:entryValues="@array/degreeValues"
+            android:key="carrera"
+            android:title="@string/pref_title_degree"
+            android:textColor="@color/white"/>
+
+        <ListPreference
+            android:entries="@array/yearKeys"
+            android:entryValues="@array/yearValues"
+            android:key="curso"
+            android:title="@string/pref_title_year"
+            android:textColor="@color/white"/>
+
+        <ListPreference
+            android:entries="@array/semesterKeys"
+            android:entryValues="@array/semesterValues"
+            android:key="cuatrimestre"
+            android:title="@string/pref_title_semester"
+            android:textColor="@color/white"/>
+    </PreferenceCategory>
+
+    <PreferenceCategory android:title="@string/app_settings">
+        <ListPreference
+            android:entries="@array/languageKeys"
+            android:entryValues="@array/languageValues"
+            android:key="idioma"
+            android:title="@string/pref_title_language"
+            android:textColor="@color/white"/>
         <CheckBoxPreference
             android:defaultValue="false"
-            android:key="prog_java"
-            android:title="@string/pref_java" />
-        <CheckBoxPreference
-            android:defaultValue="false"
-            android:key="prog_python"
-            android:title="@string/pref_python" />
-        <CheckBoxPreference
-            android:defaultValue="false"
-            android:key="prog_c"
-            android:title="@string/pref_c" />
+            android:key="allow_location"
+            android:title="@string/pref_allow_location"
+            android:textColor="@color/white"/>
     </PreferenceCategory>
 
     <SwitchPreference
         android:defaultValue="false"
-        android:key="pro_user"
-        android:title="@string/pref_title_pro" />
+        android:key="dark_mode"
+        android:title="@string/pref_dark_mode"
+        android:textColor="@color/white"/>
 
 </PreferenceScreen>
