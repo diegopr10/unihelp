@@ -34,17 +34,34 @@
     <string name="pref_title_semester">Cuatrimestre</string>
     <string name="pref_title_language">Idioma</string>
     <string name="pref_allow_location">Permitir acceso a la ubicación</string>
-    <string name="pref_spanish">Español</string>
-    <string name="pref_english">Inglés</string>
-    <string name="pref_first">Primero</string>
-    <string name="pref_second">Segundo</string>
-    <string name="pref_third">Tercero</string>
-    <string name="pref_fourth">Cuarto</string>
-    <string name="pref_sound_image">Sonido e Imagen</string>
-    <string name="pref_teleco">Teleco</string>
-    <string name="pref_telematics">Telemática</string>
-    <string name="pref_space">Espaciales</string>
-    <string name="pref_first_semester">Primer cuatrimestre</string>
-    <string name="pref_second_semester">Segundo cuatrimestre</string>
+
+    <string name="pref_spanish_text">Español</string>
+    <string name="pref_english_text">Inglés</string>
+    <string name="pref_spanish_value">Español</string>
+    <string name="pref_english_value">Inglés</string>
+
+    <string name="pref_primero_text">1º</string>
+    <string name="pref_segundo_text">2º</string>
+    <string name="pref_tercero_text">3º</string>
+    <string name="pref_cuarto_text">4º</string>
+    <string name="pref_primero_value">Primero</string>
+    <string name="pref_segundo_value">Segundo</string>
+    <string name="pref_tercero_value">Tercero</string>
+    <string name="pref_cuarto_value">Cuarto</string>
+
+    <string name="pref_sound_image_text">Ing. de Sonido e Imagen</string>
+    <string name="pref_teleco_text">Ing. de Telecomunicaciones</string>
+    <string name="pref_telematics_value">Ing. Telemática</string>
+    <string name="pref_space_text">Ing. de Comunicaciones Móviles y Espaciales</string>
+    <string name="pref_sound_image_value">Sonido e Imagen</string>
+    <string name="pref_teleco_value">Teleco</string>
+    <string name="pref_telematics_text">Telemática</string>
+    <string name="pref_space_value">Espaciales</string>
+
+    <string name="pref_first_semester_text">1er</string>
+    <string name="pref_second_semester_text">2do</string>
+    <string name="pref_first_semester_value">Primero</string>
+    <string name="pref_second_semester_value">Segundo</string>
+
     <string name="pref_dark_mode">Modo oscuro</string>
 </resources>

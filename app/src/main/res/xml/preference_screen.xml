@@ -5,29 +5,25 @@
         <EditTextPreference
             android:defaultValue=""
             android:key="alias"
-            android:title="@string/pref_title_name"
-            android:textColor="@color/white"/>
+            android:title="@string/pref_title_name" />
 
         <ListPreference
             android:entries="@array/degreeKeys"
             android:entryValues="@array/degreeValues"
             android:key="carrera"
-            android:title="@string/pref_title_degree"
-            android:textColor="@color/white"/>
+            android:title="@string/pref_title_degree" />
 
         <ListPreference
             android:entries="@array/yearKeys"
             android:entryValues="@array/yearValues"
             android:key="curso"
-            android:title="@string/pref_title_year"
-            android:textColor="@color/white"/>
+            android:title="@string/pref_title_year" />
 
         <ListPreference
             android:entries="@array/semesterKeys"
             android:entryValues="@array/semesterValues"
             android:key="cuatrimestre"
-            android:title="@string/pref_title_semester"
-            android:textColor="@color/white"/>
+            android:title="@string/pref_title_semester" />
     </PreferenceCategory>
 
     <PreferenceCategory android:title="@string/app_settings">

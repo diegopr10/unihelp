@@ -14,7 +14,7 @@ import android.view.View;
 import androidx.preference.PreferenceManager;
 import android.widget.Toast;
 
-public class Settings extends AppCompatActivity implements SharedPreferences.OnSharedPreferenceChangeListener{
+public class Settings extends AppCompatActivity{
 
     private SharedPreferences myPrefs;//Aunque se haya creado en otra actividad podemos acceder utilizando el mismo nombre luego en el getSharedPreferences
     private String alias;
@@ -38,15 +38,17 @@ public class Settings extends AppCompatActivity implements SharedPreferences.OnS
         Log.d("Sucess", "The button works");
 
         myPrefs = getSharedPreferences("MyPrefs",MODE_PRIVATE);
-        String new_name = myPrefs.getString("alias", "jaja");
-        Toast.makeText(this,"Ahora tu nombre es: " + new_name,Toast.LENGTH_LONG).show();
-
+        String new_name = myPrefs.getString("alias", "jaj");
+        String new_degree = myPrefs.getString("carrera", "jaja");
+        String new_year = myPrefs.getString("curso", "jajaj");
+        String new_semester = myPrefs.getString("cuatrimestre", "jajaja");
+        Toast.makeText(this,"Se han guardado los cambios",Toast.LENGTH_LONG).show();
+        //Para checkear
+        /*Toast.makeText(this,"Ahora tu nombre es: " + new_name + "\n" +
+                                         "Ahora tu carrera es: " + new_degree + "\n" +
+                                         "Ahora tu curso es: " + new_year + "\n" +
+                                         "Ahora tu cuatrimestre es: " + new_semester + "\n",Toast.LENGTH_LONG).show();*/
         Intent intent = new Intent(this, inicio.class);
         startActivity(intent);
-    }
-
-    @Override
-    public void onSharedPreferenceChanged(SharedPreferences sharedPreferences, String s) {
-
     }
 }

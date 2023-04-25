@@ -1,42 +1,42 @@
 <resources>
     <array name="degreeKeys">
-        <item>@string/pref_sound_image</item>
-        <item>@string/pref_teleco</item>
-        <item>@string/pref_telematics</item>
-        <item>@string/pref_space</item>
+        <item>@string/pref_sound_image_text</item>
+        <item>@string/pref_teleco_text</item>
+        <item>@string/pref_telematics_text</item>
+        <item>@string/pref_space_text</item>
     </array>
     <array name="degreeValues">
-        <item>@string/pref_sound_image</item>
-        <item>@string/pref_teleco</item>
-        <item>@string/pref_telematics</item>
-        <item>@string/pref_space</item>
+        <item>@string/pref_sound_image_value</item>
+        <item>@string/pref_teleco_value</item>
+        <item>@string/pref_telematics_value</item>
+        <item>@string/pref_space_value</item>
     </array>
     <array name="yearKeys">
-        <item>@string/pref_first</item>
-        <item>@string/pref_second</item>
-        <item>@string/pref_third</item>
-        <item>@string/pref_fourth</item>
+        <item>@string/pref_primero_text</item>
+        <item>@string/pref_segundo_text</item>
+        <item>@string/pref_tercero_text</item>
+        <item>@string/pref_cuarto_text</item>
     </array>
     <array name="yearValues">
-        <item>@string/pref_first</item>
-        <item>@string/pref_second</item>
-        <item>@string/pref_third</item>
-        <item>@string/pref_fourth</item>
+        <item>@string/pref_primero_value</item>
+        <item>@string/pref_segundo_value</item>
+        <item>@string/pref_tercero_value</item>
+        <item>@string/pref_cuarto_value</item>
     </array>
     <array name="semesterKeys">
-        <item>@string/pref_first_semester</item>
-        <item>@string/pref_second_semester</item>
+        <item>@string/pref_first_semester_text</item>
+        <item>@string/pref_second_semester_text</item>
     </array>
     <array name="semesterValues">
-        <item>@string/pref_first_semester</item>
-        <item>@string/pref_second_semester</item>
+        <item>@string/pref_first_semester_value</item>
+        <item>@string/pref_second_semester_value</item>
     </array>
     <array name="languageKeys">
-        <item>@string/pref_english</item>
-        <item>@string/pref_spanish</item>
+        <item>@string/pref_spanish_text</item>
+        <item>@string/pref_english_text</item>
     </array>
     <array name="languageValues">
-        <item>@string/pref_spanish</item>
-        <item>@string/pref_english</item>
+        <item>@string/pref_spanish_value</item>
+        <item>@string/pref_english_value</item>
     </array>
 </resources>
