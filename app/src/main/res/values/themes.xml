@@ -7,4 +7,13 @@
         <item name="colorOnPrimary">@color/white</item>
         <item name="android:statusBarColor">@color/unihelp_second_color</item>
     </style>
+
+    <style name="Theme.Unihelp.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="Theme.Unihelp.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="Theme.Unihelp.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 </resources>
