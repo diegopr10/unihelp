@@ -1,22 +1,31 @@
 package com.example.unihelp;
 
+import androidx.room.ColumnInfo;
+import androidx.room.Entity;
+import androidx.room.PrimaryKey;
+
+@Entity
 public class Note {
-    private String examTitle;
+    @PrimaryKey(autoGenerate = true)
+    public long id;
+
+    @ColumnInfo(name = "Nombre")
+    private String title;
+
+    @ColumnInfo(name = "Asignatura")
     private String subject;
+    @ColumnInfo(name = "Nota")
     private int mark;
 
-    public Note(String examTitle, String subject, int mark) {
-        this.examTitle = examTitle;
-        this.subject = subject;
-        this.mark = mark;
+    @ColumnInfo(name = "Porcentaje")
+    private int percentage;
+
+    public String getTitle() {
+        return title;
     }
 
-    public String getExamTitle() {
-        return examTitle;
-    }
-
-    public void setExamTitle(String examTitle) {
-        this.examTitle = examTitle;
+    public void setTitle(String title) {
+        this.title = title;
     }
 
     public String getSubject() {
@@ -33,5 +42,20 @@ public class Note {
 
     public void setMark(int mark) {
         this.mark = mark;
+    }
+
+    public int getPercentage() {
+        return percentage;
+    }
+
+    public void setPercentage(int percentage) {
+        this.percentage = percentage;
+    }
+
+    public Note(String title, String subject, int mark, int percentage) {
+        this.title = title;
+        this.subject = subject;
+        this.mark = mark;
+        this.percentage = percentage;
     }
 }

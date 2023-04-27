@@ -20,7 +20,6 @@ public class inicio extends AppCompatActivity {
     static final int REQUEST_IMAGE_GET = 1;
     Uri fullPhotoUri;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -50,27 +49,21 @@ public class inicio extends AppCompatActivity {
                 Intent intent = new Intent(Intent.ACTION_GET_CONTENT);
                 intent.setType("image/*");
                 startActivityForResult(intent, REQUEST_IMAGE_GET);
-
             }
         });
-
-
-
     }
-
     public void go_to_modo_estudio(View view){
         Intent nuevoIntent = new Intent(this,ModoEstudio.class);
         startActivity(nuevoIntent);
     }
-
     public void go_to_settings(View view){
         Intent nuevoIntent = new Intent(this,Settings.class);
         startActivity(nuevoIntent);
     }
-
-
-
-
+    public void go_to_marks(View view){
+        Intent nuevoIntent = new Intent(this,Marks.class);
+        startActivity(nuevoIntent);
+    }
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
 
@@ -82,6 +75,4 @@ public class inicio extends AppCompatActivity {
             fotoPerfil.setImageURI(fullPhotoUri);
         }
     }
-
-
 }
