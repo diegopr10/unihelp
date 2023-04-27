@@ -67,6 +67,12 @@
     <!--Pantalla Calificaciones-->
     <string name="marks_text">MIS CALIFICACIONES</string>
     <string name="title_activity_create_note">CreateNote</string>
+    <string name="note_creator_title_text">NUEVA CALIFICACIÓN</string>
+    <string name="note_title_text">Título de la prueba:</string>
+    <string name="note_subject_text">Asignatura:</string>
+    <string name="note_number_text">Calificación:</string>
+    <string name="note_percentage_text">% Sobre nota final:</string>
+
     <!-- Strings used for fragments for navigation -->
     <string name="first_fragment_label">First Fragment</string>
     <string name="second_fragment_label">Second Fragment</string>

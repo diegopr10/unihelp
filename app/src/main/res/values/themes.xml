@@ -6,6 +6,7 @@
         <item name="colorPrimaryVariant">@color/unihelp_second_color</item>
         <item name="colorOnPrimary">@color/white</item>
         <item name="android:statusBarColor">@color/unihelp_second_color</item>
+        <item name="android:titleTextColor">@color/white</item>
     </style>
 
     <style name="Theme.Unihelp.NoActionBar">

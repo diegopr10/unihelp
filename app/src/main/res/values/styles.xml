@@ -3,6 +3,9 @@
     <style name="MyButtonStyle" parent="Widget.AppCompat.Button">
         <item name="android:fontFamily">@font/slackey_regular</item>
     </style>
+    <style name="MyTextViewStyle" parent="Widget.AppCompat.EditText">
+        <item name="android:fontFamily">@font/slackey_regular</item>
+    </style>
     <style name="MyEditTextStyle" parent="Widget.AppCompat.EditText">
         <item name="android:fontFamily">@font/slackey_regular</item>
     </style>
