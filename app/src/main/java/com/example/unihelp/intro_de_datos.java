@@ -6,9 +6,11 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.Spinner;
+import android.widget.Toast;
 
 public class intro_de_datos extends AppCompatActivity {
 
@@ -39,6 +41,7 @@ public class intro_de_datos extends AppCompatActivity {
 
         ArrayAdapter<String> adapter3 = new ArrayAdapter<String>(this, R.layout.spinner_item_style, opciones_de_cuatri);
         spinner3.setAdapter(adapter3);
+
     }
 
     public void siguiente(View view){
