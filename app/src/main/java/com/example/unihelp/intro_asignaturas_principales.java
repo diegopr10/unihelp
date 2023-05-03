@@ -61,7 +61,7 @@ public class intro_asignaturas_principales extends AppCompatActivity {
         spinnerAsig7=(Spinner) findViewById(R.id.spinner_asignatura7);
 
         //aqui sencillamente defino el adaptador para todos los spinners de dificultad de cada asigantura
-        String [] opciones_de_dificultad = {"Bien","Regular","Mal"};
+        String [] opciones_de_dificultad = {"","Bien","Regular","Mal"};
 
         ArrayAdapter<String> adapter1 = new ArrayAdapter<String>(this, R.layout.spinner_item_style, opciones_de_dificultad);
         spinnerAsig1.setAdapter(adapter1);

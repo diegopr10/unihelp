@@ -6,9 +6,11 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
+import android.widget.LinearLayout;
 import android.widget.Spinner;
 import android.widget.Toast;
 
@@ -20,6 +22,8 @@ public class intro_de_datos extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_intro_de_datos);
         myPrefs = getSharedPreferences("MyPrefs", MODE_PRIVATE);
@@ -29,12 +33,14 @@ public class intro_de_datos extends AppCompatActivity {
         spinner3 = (Spinner) findViewById(R.id.spinner_idioma);
         et1 = (EditText)findViewById(R.id.campo_nombre);
 
-        String [] opciones_de_carrera = {"Sonido e Imagen","Teleco","Telemática","Espaciales"};
-        String [] opciones_de_curso = {"Primero","Segundo","Tercero","Cuarto"};
-        String [] opciones_de_cuatri = {"Primero","Segundo"};
+        String [] opciones_de_carrera = {"","Sonido e Imagen","Teleco","Telemática","Espaciales"};
+        String [] opciones_de_curso = {"","Primero","Segundo","Tercero","Cuarto"};
+        String [] opciones_de_cuatri = {"","Primero","Segundo"};
 
         ArrayAdapter<String> adapter1 = new ArrayAdapter<String>(this, R.layout.spinner_item_style, opciones_de_carrera);
         spinner1.setAdapter(adapter1);
+
+
 
         ArrayAdapter<String> adapter2 = new ArrayAdapter<String>(this, R.layout.spinner_item_style, opciones_de_curso);
         spinner2.setAdapter(adapter2);
@@ -43,6 +49,8 @@ public class intro_de_datos extends AppCompatActivity {
         spinner3.setAdapter(adapter3);
 
     }
+
+
 
     public void siguiente(View view){
         String[] cadena = {"alias","carrera","curso","cuatrimestre"};
