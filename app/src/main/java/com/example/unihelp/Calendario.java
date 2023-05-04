@@ -1,15 +1,22 @@
 package com.example.unihelp;
 
 import android.app.DatePickerDialog;
+import android.content.ContentValues;
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.CalendarView;
 import android.widget.DatePicker;
+import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+
+import java.text.DateFormat;
 import java.util.Calendar;
 
 
@@ -34,26 +41,40 @@ public class Calendario extends AppCompatActivity {
 
 
     }
+    public void agregarNota(View view) {
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle("Agregar nota");
 
-//   Funcion para abrir un calendario como dialog en otra pestaña.
+        final EditText input = new EditText(this);
+        input.setHint("Escribe aquí tu nota");
+        builder.setView(input);
 
-//    public void abrirCalendario(View view){
+        builder.setPositiveButton("Guardar", (dialog, which) -> {
+            String fecha = tv_Calendar.getText().toString();
+            String nota = input.getText().toString();
+            guardarNota(fecha, nota);
+        });
+
+        builder.setNegativeButton("Cancelar", (dialog, which) -> dialog.cancel());
+
+        builder.show();
+    }
+
+    private void guardarNota(String fecha, String nota) {
+//        SQLiteDatabase db = dbHelper.getWritableDatabase();
 //
+//        ContentValues values = new ContentValues();
+//        values.put(NotasContract.NotasEntry.COLUMN_NAME_FECHA, fecha);
+//        values.put(NotasContract.NotasEntry.COLUMN_NAME_TEXTO, nota);
 //
-////        Calendar cal = Calendar.getInstance();
-////        int year= cal.get(Calendar.YEAR);
-////        int month = cal.get(Calendar.MONTH);
-////        int day = cal.get(Calendar.DAY_OF_MONTH);
-////
-////        DatePickerDialog dialog= new DatePickerDialog(Calendario.this, new DatePickerDialog.OnDateSetListener() {
-////
-////            public void onDateSet(DatePicker datePicker, int anio, int mes, int dia) {
-////                String fecha = dia + "/"+ mes+"/"+anio;
-////                tv_Calendar.setText(fecha);
-////            }
-////        },day,month,year);
-////
-////        dialog.show();
+//        db.insert(NotasContract.NotasEntry.TABLE_NAME, null, values);
 //
-//    }
+    }
+    private String obtenerNotas(String fecha) {
+
+        return fecha;
+    }
+
+
+
 }
