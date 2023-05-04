@@ -13,7 +13,6 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 public class NoteCreator extends AppCompatActivity {
-
     private Note new_note;
     private BaseDeDatos db;
     String note_title_text;
