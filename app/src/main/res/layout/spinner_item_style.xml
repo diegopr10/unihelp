@@ -8,5 +8,6 @@
     android:textColor="@color/white"
     android:background="@color/unihelp_color"
     android:fontFamily="@font/slackey_regular"
+    android:textAlignment="center"
     xmlns:android="http://schemas.android.com/apk/res/android"/>
 

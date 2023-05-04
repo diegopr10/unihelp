@@ -20,6 +20,9 @@ public interface AsignaturaDao {
     @Query("SELECT * FROM Asignatura WHERE curso=:curso AND cuatrimestre=:cuatrimestre")
     List<Asignatura> selectByCursoAndCuatri(long curso, long cuatrimestre);
 
+    @Query("UPDATE Asignatura SET dificultad = :dificultad WHERE id = :id")
+    void actualizarDificultad(long id,String dificultad);
+
     @Query("SELECT * FROM Asignatura WHERE nombre LIKE :nombre LIMIT 1")
     Asignatura selectByNombre(String nombre);
 

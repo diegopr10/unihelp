@@ -27,6 +27,10 @@ public class intro_asignaturas_principales extends AppCompatActivity {
 
     private long numero_cuatrimestre;
 
+    private List<Asignatura> asignaturaList;
+
+    private String arrayDeDificultades[];
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -42,7 +46,8 @@ public class intro_asignaturas_principales extends AppCompatActivity {
         //aqui lo que hago es usar una "función" de sql que he definidido en el dao de la asignatura
         //la cual nos devuelve las asignaturas que coincidan con el curso y el cuatrimestre introducido en los spinners
         //de la pantalla de intro de datos
-        List<Asignatura> asignaturaList = db.asignaturaDao().selectByCursoAndCuatri(numero_curso,numero_cuatrimestre);
+        asignaturaList = db.asignaturaDao().selectByCursoAndCuatri(numero_curso,numero_cuatrimestre);
+        arrayDeDificultades = new String[asignaturaList.size()];
 
         textAsig1=(TextView) findViewById(R.id.asignatura1);
         textAsig2=(TextView) findViewById(R.id.asignatura2);
@@ -61,7 +66,7 @@ public class intro_asignaturas_principales extends AppCompatActivity {
         spinnerAsig7=(Spinner) findViewById(R.id.spinner_asignatura7);
 
         //aqui sencillamente defino el adaptador para todos los spinners de dificultad de cada asigantura
-        String [] opciones_de_dificultad = {"Bien","Regular","Mal"};
+        String [] opciones_de_dificultad = {"","Bien","Regular","Mal"};
 
         ArrayAdapter<String> adapter1 = new ArrayAdapter<String>(this, R.layout.spinner_item_style, opciones_de_dificultad);
         spinnerAsig1.setAdapter(adapter1);
@@ -78,6 +83,8 @@ public class intro_asignaturas_principales extends AppCompatActivity {
         //en los cursos de nuestra carrera (suponiendo que tenemos solamente asignaturas del mismo curso) podemos tener entre 5 y 7 asignaturas
         //entonces en los casos en los que haya menos de 7 asignaturas, oculto el sexto y/o séptimo spinner
         if(asignaturaList.size()==5){
+
+
             textAsig6.setVisibility(View.GONE);
             textAsig7.setVisibility(View.GONE);
             spinnerAsig6.setVisibility(View.GONE);
@@ -121,6 +128,26 @@ public class intro_asignaturas_principales extends AppCompatActivity {
     }
 
     public void siguiente2(View view) {
+
+        arrayDeDificultades[0] = spinnerAsig1.getSelectedItem().toString();
+        arrayDeDificultades[1] = spinnerAsig2.getSelectedItem().toString();
+        arrayDeDificultades[2] = spinnerAsig3.getSelectedItem().toString();
+        arrayDeDificultades[3] = spinnerAsig4.getSelectedItem().toString();
+        arrayDeDificultades[4] = spinnerAsig5.getSelectedItem().toString();
+
+        if(asignaturaList.size()==6){
+            arrayDeDificultades[5] = spinnerAsig6.getSelectedItem().toString();
+        }
+
+        if(asignaturaList.size()==7){
+            arrayDeDificultades[6] = spinnerAsig7.getSelectedItem().toString();
+        }
+
+
+        for(int i =0;i<asignaturaList.size();i++){
+            long id = asignaturaList.get(i).id;
+            db.asignaturaDao().actualizarDificultad(id,arrayDeDificultades[i]);
+        }
 
         Intent intent = new Intent(this,inicio.class);
         startActivity(intent);
