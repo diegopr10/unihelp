@@ -64,6 +64,16 @@ public class inicio extends AppCompatActivity {
         Intent nuevoIntent = new Intent(this,Marks.class);
         startActivity(nuevoIntent);
     }
+    public void go_to_calendario(View view){
+        Intent nuevoIntent = new Intent(this,Calendario.class);
+        startActivity(nuevoIntent);
+    }
+
+    //public void go_to_links(View view){
+        //Intent nuevoIntent = new Intent(this,Links.class);
+      //  startActivity(nuevoIntent);
+    //}
+
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
 
