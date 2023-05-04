@@ -22,5 +22,4 @@ public interface NoteDao {
 
     @Delete
     public void deleteNote(Note note);
-
 }

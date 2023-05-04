@@ -47,9 +47,9 @@ public class NoteViewAdapter extends RecyclerView.Adapter<NoteViewAdapter.NoteVi
     public void onBindViewHolder(@NonNull NoteViewAdapter.NoteViewHolder holder, int position) {
         Note note = notes_list.get(position);
         holder.title.setText(note.getTitle());
-        holder.mark.setText(note.getMark());
+        holder.mark.setText(String.valueOf(note.getMark()));
         holder.subject.setText(note.getSubject());
-        holder.percentage.setText(note.getPercentage());
+        holder.percentage.setText(String.valueOf(note.getPercentage()));
     }
 
     @Override
@@ -94,8 +94,8 @@ public class NoteViewAdapter extends RecyclerView.Adapter<NoteViewAdapter.NoteVi
         public void setPercentage(TextView percentage) {
             this.percentage = percentage;
         }
-        public NoteViewHolder(@NonNull View itemView) {
-            super(itemView);
+        public NoteViewHolder(@NonNull View note_view) {
+            super(note_view);
             title = itemView.findViewById(R.id.note_title_view);
             subject = itemView.findViewById(R.id.note_subject_view);
             mark = itemView.findViewById(R.id.note_mark_view);
