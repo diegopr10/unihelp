@@ -24,7 +24,7 @@
             <TextView
                 android:id="@+id/como_se_te_dan"
                 android:layout_width="match_parent"
-                android:layout_height="71dp"
+                android:layout_height="wrap_content"
                 android:layout_marginTop="4dp"
                 android:fontFamily="@font/slackey_regular"
                 android:text="¿Cómo se te dan las asignaturas?"
@@ -32,7 +32,6 @@
                 android:textSize="24sp"
                 android:textAlignment="center"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.494"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 

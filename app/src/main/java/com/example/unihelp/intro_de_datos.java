@@ -52,8 +52,8 @@ public class intro_de_datos extends AppCompatActivity {
 
 
 
-    public void siguiente(View view){
-        String[] cadena = {"alias","carrera","curso","cuatrimestre"};
+    public void siguiente(View view) {
+        String[] cadena = {"alias", "carrera", "curso", "cuatrimestre"};
 
         int nivel = 1;
         int experiencia = 0;
@@ -66,6 +66,13 @@ public class intro_de_datos extends AppCompatActivity {
         String seleccion_curso = spinner2.getSelectedItem().toString();
         String seleccion_cautri = spinner3.getSelectedItem().toString();
 
+
+        if (valor1_string.equals("") || seleccion_carrera.equals("") || seleccion_curso.equals("") || seleccion_cautri.equals("")) {
+            Toast.makeText(getApplicationContext(), "Debes completar todas las opciones.", Toast.LENGTH_SHORT).show();
+
+        }
+        else {
+
         /*
         Los siguientes else if los he puesto porque en la base de datos la columna de cuatrimestre y curso, los he definido
         como integers, entonces como en los spinners tenemos puesto que salga "primero,segundo,tercero" etc...
@@ -75,54 +82,50 @@ public class intro_de_datos extends AppCompatActivity {
         puesto con long como tiene también boni en sus ejemplos de aplicaciones con bases de datos
         */
 
-        if(seleccion_cautri.equals("Primero")){
-            seleccion_cautri_int=1;
+            if (seleccion_cautri.equals("Primero")) {
+                seleccion_cautri_int = 1;
+            } else {
+                seleccion_cautri_int = 2;
+            }
+
+
+            if (seleccion_curso.equals("Primero")) {
+                seleccion_curso_int = 1;
+            } else if (seleccion_curso.equals("Segundo")) {
+                seleccion_curso_int = 2;
+            } else if (seleccion_curso.equals("Tercero")) {
+                seleccion_curso_int = 3;
+            } else {
+                seleccion_curso_int = 4;
+            }
+
+
+            SharedPreferences.Editor obj_editor = myPrefs.edit();
+            obj_editor.putString(cadena[0], valor1_string);
+            obj_editor.apply();
+
+            obj_editor.putString(cadena[1], seleccion_carrera);
+            obj_editor.apply();
+
+            obj_editor.putLong(cadena[2], seleccion_curso_int);
+            obj_editor.apply();
+
+            obj_editor.putLong(cadena[3], seleccion_cautri_int);
+            obj_editor.apply();
+
+            obj_editor.putInt("nivel", nivel);
+            obj_editor.apply();
+
+            obj_editor.putInt("experiencia", experiencia);
+            obj_editor.apply();
+
+            //Pone isFirstTime a false para que no vuelva a aparecer en el cuestionario al iniciar la app.
+            //Luego le lleva a la pantalla de inicio mediante un intent.
+            myPrefs.edit().putBoolean("isFirstTime", false).apply();
+            Intent intent = new Intent(this, intro_asignaturas_principales.class);
+            startActivity(intent);
+            finish();
         }
-        else{
-            seleccion_cautri_int=2;
-        }
 
-
-        if(seleccion_curso.equals("Primero")){
-            seleccion_curso_int=1;
-        }
-        else if(seleccion_curso.equals("Segundo")){
-            seleccion_curso_int=2;
-        }
-        else if(seleccion_curso.equals("Tercero")){
-            seleccion_curso_int=3;
-        }
-        else {
-            seleccion_curso_int=4;
-        }
-
-
-
-
-        SharedPreferences.Editor obj_editor = myPrefs.edit();
-        obj_editor.putString(cadena[0],valor1_string);
-        obj_editor.apply();
-
-        obj_editor.putString(cadena[1],seleccion_carrera);
-        obj_editor.apply();
-
-        obj_editor.putLong(cadena[2],seleccion_curso_int);
-        obj_editor.apply();
-
-        obj_editor.putLong(cadena[3],seleccion_cautri_int);
-        obj_editor.apply();
-
-        obj_editor.putInt("nivel",nivel);
-        obj_editor.apply();
-
-        obj_editor.putInt("experiencia",experiencia);
-        obj_editor.apply();
-
-        //Pone isFirstTime a false para que no vuelva a aparecer en el cuestionario al iniciar la app.
-        //Luego le lleva a la pantalla de inicio mediante un intent.
-        myPrefs.edit().putBoolean("isFirstTime", false).apply();
-        Intent intent = new Intent(this, intro_asignaturas_principales.class);
-        startActivity(intent);
-        finish();
     }
 }

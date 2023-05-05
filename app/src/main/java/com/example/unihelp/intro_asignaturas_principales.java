@@ -10,6 +10,7 @@ import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.List;
 
@@ -84,7 +85,9 @@ public class intro_asignaturas_principales extends AppCompatActivity {
         spinnerAsig5.setAdapter(adapter1);
         spinnerAsig6.setAdapter(adapter1);
         spinnerAsig7.setAdapter(adapter1);
+/*
 
+//Estas lineas las podeis utilizar para dejar preseleccioado el primer item del spinner para hacer pruebas más rapido
         spinnerAsig1.setSelection(1);
         spinnerAsig2.setSelection(1);
         spinnerAsig3.setSelection(1);
@@ -93,7 +96,7 @@ public class intro_asignaturas_principales extends AppCompatActivity {
         spinnerAsig6.setSelection(1);
         spinnerAsig7.setSelection(1);
 
-
+*/
 
 
         //En estos if, else if y else, lo que hago es comprobar el tamaño de la lista que obtengo de la base de datos, debido a que
@@ -146,35 +149,55 @@ public class intro_asignaturas_principales extends AppCompatActivity {
 
     public void siguiente2(View view) {
 
+        boolean todosCamposSeleccionados = true;
+
         arrayDeDificultades[0] = spinnerAsig1.getSelectedItem().toString();
         arrayDeDificultades[1] = spinnerAsig2.getSelectedItem().toString();
         arrayDeDificultades[2] = spinnerAsig3.getSelectedItem().toString();
         arrayDeDificultades[3] = spinnerAsig4.getSelectedItem().toString();
         arrayDeDificultades[4] = spinnerAsig5.getSelectedItem().toString();
 
+        if(arrayDeDificultades[0].equals("")||arrayDeDificultades[1].equals("")
+                || arrayDeDificultades[2].equals("") || arrayDeDificultades[3].equals("") || arrayDeDificultades[4].equals("")){
+            todosCamposSeleccionados = false;
+        }
+
         if(asignaturaList.size()==6){
             arrayDeDificultades[5] = spinnerAsig6.getSelectedItem().toString();
+            if(arrayDeDificultades[5].equals(""))
+                todosCamposSeleccionados = false;
         }
 
         if(asignaturaList.size()==7){
             arrayDeDificultades[5] = spinnerAsig6.getSelectedItem().toString();
             arrayDeDificultades[6] = spinnerAsig7.getSelectedItem().toString();
+
+            if(arrayDeDificultades[5].equals("")||arrayDeDificultades[6].equals(""))
+                todosCamposSeleccionados = false;
         }
 
 
+        if(todosCamposSeleccionados){
 
-        for(int i = 0;i<asignaturaList.size();i++){
-            long id = asignaturaList.get(i).id;
-            Log.d("MiAplicacion", "Mensaje de depuracion" + i+  " " + arrayDeDificultades[i]);
+            for(int i = 0;i<asignaturaList.size();i++){
+                long id = asignaturaList.get(i).id;
+                //Log.d("MiAplicacion", "Mensaje de depuracion" + i+  " " + arrayDeDificultades[i]);
 
-            db.asignaturaDao().actualizarDificultad(id,arrayDeDificultades[i]);
+                db.asignaturaDao().actualizarDificultad(id,arrayDeDificultades[i]);
+            }
+
+            Intent intent = new Intent(this,inicio.class);
+            startActivity(intent);
+
+
+            finish();
+
         }
 
-        Intent intent = new Intent(this,inicio.class);
-        startActivity(intent);
+        else{
+            Toast.makeText(getApplicationContext(), "Debes completar todos los campos.", Toast.LENGTH_SHORT).show();
+        }
 
-
-        finish();
 
 
     }
