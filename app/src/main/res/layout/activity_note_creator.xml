@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:backgroundTint="@color/unihelp_color"
+    android:background="@color/unihelp_color"
     android:padding="20dp"
     tools:context=".NoteCreator">
 
@@ -14,8 +14,10 @@
         android:layout_height="0dp"
         android:layout_weight="0.2"
         android:textAlignment="center"
+        android:textStyle="bold"
+        android:textColor="@color/white"
         android:text="@string/note_creator_title_text"
-        android:textSize = "20dp"
+        android:textSize = "20sp"
         style="@style/MyTextViewStyle"/>
 
     <LinearLayout
@@ -37,7 +39,8 @@
             android:hint="@string/note_title_text"
             android:layout_marginLeft="15dp"
             android:layout_marginRight="15dp"
-            android:textSize="25dp"/>
+            android:textColor="@color/black"
+            android:textSize="25sp" />
 
         <View
             android:layout_width="match_parent"
@@ -51,7 +54,8 @@
             android:hint="@string/note_subject_text"
             android:layout_marginLeft="15dp"
             android:layout_marginRight="15dp"
-            android:textSize="25dp"/>
+            android:textColor="@color/black"
+            android:textSize="25sp"/>
 
         <View
             android:layout_width="match_parent"
@@ -65,7 +69,8 @@
             android:hint="@string/note_number_text"
             android:layout_marginLeft="15dp"
             android:layout_marginRight="15dp"
-            android:textSize="25dp"/>
+            android:textColor="@color/black"
+            android:textSize="25sp"/>
 
         <View
             android:layout_width="match_parent"
@@ -79,13 +84,13 @@
             android:hint="@string/note_percentage_text"
             android:layout_marginLeft="15dp"
             android:layout_marginRight="15dp"
-            android:textSize="25dp"/>
+            android:textColor="@color/black"
+            android:textSize="25sp"/>
 
         <View
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="0.5"/>
-
     </LinearLayout>
 
     <Button
@@ -94,12 +99,10 @@
         android:layout_height="0dp"
         android:layout_weight="0.2"
         android:text="Añadir Califiación"
-        android:textSize="20dp"
+        android:textSize="20sp"
         android:onClick="goToMarks"
-        android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp"
-        android:layout_marginBottom="10dp"
-        android:background="@drawable/rounded_corner"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/button_border"
         style="@style/MyButtonStyle"/>
 
 </LinearLayout>

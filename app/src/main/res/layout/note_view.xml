@@ -3,8 +3,13 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical"
-    android:padding="10dp"
-    android:background="@drawable/rounded_corner">
+    android:padding="15dp"
+    android:layout_marginRight="5dp"
+    android:layout_marginLeft="5dp"
+    android:layout_marginTop="5dp"
+    android:layout_marginBottom="5dp"
+    android:background="@drawable/rounded_corner"
+    xmlns:tools="http://schemas.android.com/tools">
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -13,16 +18,21 @@
             android:id="@+id/note_title_view"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_weight="0.2"
-            android:hint="Examen Parcial 1"
-            android:textSize= "30dp"/>
+            android:layout_weight="0.6"
+            android:textStyle="bold"
+            android:textSize="30sp"
+            android:textColor="@color/teal_700"
+            tools:text="Examen Parcial 1"/>
         <TextView
             android:id="@+id/note_mark_view"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="0.2"
-            android:hint="10/10"
-            android:textSize= "30dp"/>
+            android:gravity="end"
+            android:textStyle="bold"
+            android:textSize="30sp"
+            android:textColor="@color/teal_700"
+            tools:text="10/10"/>
     </LinearLayout>
 
     <LinearLayout
@@ -33,15 +43,18 @@
             android:id="@+id/note_subject_view"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_weight="0.2"
-            android:hint="Sistemas Lineales"
-            android:textSize= "20dp"/>
+            android:layout_weight="0.6"
+            android:textSize="25sp"
+            android:textColor="@color/unihelp_second_color"
+            tools:text="Sistemas Lineales"/>
         <TextView
             android:id="@+id/note_percentage_view"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="0.2"
-            android:hint="10%"
-            android:textSize= "20dp"/>
+            android:gravity="end"
+            android:textSize="25sp"
+            android:textColor="@color/unihelp_second_color"
+            tools:text="10%"/>
     </LinearLayout>
 </LinearLayout>
