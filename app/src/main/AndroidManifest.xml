@@ -27,6 +27,9 @@
             android:name=".inicio"
             android:exported="false" />
         <activity
+            android:name=".Calendario"
+            android:exported="false" />
+        <activity
             android:name=".intro_de_datos"
             android:exported="false" />
         <activity
