@@ -35,6 +35,12 @@
             tools:text="10/10"/>
     </LinearLayout>
 
+    <View
+        android:id="@+id/divider2"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="?android:attr/listDivider" />
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -46,6 +52,7 @@
             android:layout_weight="0.6"
             android:textSize="25sp"
             android:textColor="@color/unihelp_second_color"
+            android:textStyle="bold"
             tools:text="Sistemas Lineales"/>
         <TextView
             android:id="@+id/note_percentage_view"
@@ -54,6 +61,7 @@
             android:layout_weight="0.2"
             android:gravity="end"
             android:textSize="25sp"
+            android:textStyle="bold"
             android:textColor="@color/unihelp_second_color"
             tools:text="10%"/>
     </LinearLayout>

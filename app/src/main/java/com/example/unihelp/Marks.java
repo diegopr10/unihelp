@@ -27,9 +27,16 @@ public class Marks extends AppCompatActivity {
         recycler_view.setAdapter(note_view_adapter);
         note_view_adapter.notifyDataSetChanged();
     }
-
     public void goToNoteCreator(View view){
         Intent intent = new Intent(this, NoteCreator.class);
+        startActivity(intent);
+    }
+    public void goToNoteDelete(View view){
+        Intent intent = new Intent(this, NoteDelete.class);
+        startActivity(intent);
+    }
+    public void goToMedias(View view){
+        Intent intent = new Intent(this, Medias.class);
         startActivity(intent);
     }
 }

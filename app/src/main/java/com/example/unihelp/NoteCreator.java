@@ -4,12 +4,14 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ArrayAdapter;
+import android.widget.AutoCompleteTextView;
 import android.widget.EditText;
 import android.widget.Toast;
 
 public class NoteCreator extends AppCompatActivity {
     private EditText note_title;
-    private EditText note_subject;
+    private AutoCompleteTextView note_subject;
     private EditText note_number;
     private EditText note_percentage;
     @Override
@@ -17,8 +19,13 @@ public class NoteCreator extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_note_creator);
 
+        String[] subjects_array = new String[]{"Ing. de Sonido e Imagen", "Ing. de Telecom.","Ing. Telematica","Ing. Com. Espaciales"};
+
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,R.layout.drop_down_item,subjects_array);
+        note_subject = findViewById(R.id.auto_complete);
+        note_subject.setAdapter(adapter);
+
         note_title = findViewById(R.id.note_title);
-        note_subject = findViewById(R.id.note_subject);
         note_number = findViewById(R.id.note_number);
         note_percentage = findViewById(R.id.note_percentage);
     }
@@ -33,8 +40,7 @@ public class NoteCreator extends AppCompatActivity {
         Note new_note = new Note(note_title_text,note_subject_text,note_number_int,note_percentage_int);
         db.noteDao().insertNote(new_note);
 
-        Toast.makeText(this,note_title_text,Toast.LENGTH_LONG).show();
-        //Toast.makeText(this,"Se han guardado los cambios",Toast.LENGTH_LONG).show();
+        Toast.makeText(this,"Nueva nota añadida",Toast.LENGTH_LONG).show();
 
         Intent intent = new Intent(this, Marks.class);
         startActivity(intent);

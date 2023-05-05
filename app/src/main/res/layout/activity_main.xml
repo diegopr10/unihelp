@@ -33,8 +33,9 @@
         android:layout_height="0dp"
         android:layout_gravity="center_horizontal"
         android:layout_weight="0.4"
-        android:background="@color/unihelp_color"
+        android:background="@drawable/button_border"
         android:onClick="start"
+        android:textSize="20dp"
         android:text="@string/start_text"
         style="@style/MyButtonStyle"/>
 

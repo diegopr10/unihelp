@@ -45,8 +45,8 @@
             android:layout_width="0dp"
             android:layout_weight="1"
             android:layout_height="match_parent"
-            android:text = "ADD"
-            android:textSize="20sp"
+            android:text = "AÑADIR"
+            android:textSize="18sp"
             android:background="@drawable/button_border"
             android:textColor="@color/white"
             android:onClick = "goToNoteCreator"
@@ -61,9 +61,9 @@
             android:layout_weight="1"
             android:layout_height="match_parent"
             android:background="@drawable/button_border"
-            android:text = "edit"
-            android:textSize="20sp"
-            android:onClick = "goToNoteCreator"
+            android:text = "BORRAR"
+            android:textSize="18sp"
+            android:onClick = "goToMedias"
             style="@style/MyButtonStyle"/>
 
         <Button
@@ -75,9 +75,9 @@
             android:layout_weight="1"
             android:layout_height="match_parent"
             android:background="@drawable/button_border"
-            android:text = "DELETE"
-            android:textSize="20sp"
-            android:onClick = "goToNoteCreator"
+            android:text = "MEDIAS"
+            android:textSize="18sp"
+            android:onClick = "goToNoteDelete"
             style="@style/MyButtonStyle"/>
     </LinearLayout>
 
