@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Spinner;
@@ -29,7 +30,11 @@ public class intro_asignaturas_principales extends AppCompatActivity {
 
     private List<Asignatura> asignaturaList;
 
+    private String titulacion;
+
     private String arrayDeDificultades[];
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,6 +44,9 @@ public class intro_asignaturas_principales extends AppCompatActivity {
         preferencias = getSharedPreferences("MyPrefs", MODE_PRIVATE);
         numero_curso = preferencias.getLong("curso",0);
         numero_cuatrimestre = preferencias.getLong("cuatrimestre",0);
+        titulacion = preferencias.getString("carrera","");
+
+
 
 
         db=BaseDeDatos.getInstance(getApplicationContext());
@@ -46,7 +54,7 @@ public class intro_asignaturas_principales extends AppCompatActivity {
         //aqui lo que hago es usar una "función" de sql que he definidido en el dao de la asignatura
         //la cual nos devuelve las asignaturas que coincidan con el curso y el cuatrimestre introducido en los spinners
         //de la pantalla de intro de datos
-        asignaturaList = db.asignaturaDao().selectByCursoAndCuatri(numero_curso,numero_cuatrimestre);
+        asignaturaList = db.asignaturaDao().selectByCursoCuatriAndTitulacion(numero_curso,numero_cuatrimestre,titulacion,"comun");
         arrayDeDificultades = new String[asignaturaList.size()];
 
         textAsig1=(TextView) findViewById(R.id.asignatura1);
@@ -77,6 +85,15 @@ public class intro_asignaturas_principales extends AppCompatActivity {
         spinnerAsig6.setAdapter(adapter1);
         spinnerAsig7.setAdapter(adapter1);
 
+        spinnerAsig1.setSelection(1);
+        spinnerAsig2.setSelection(1);
+        spinnerAsig3.setSelection(1);
+        spinnerAsig4.setSelection(1);
+        spinnerAsig5.setSelection(1);
+        spinnerAsig6.setSelection(1);
+        spinnerAsig7.setSelection(1);
+
+
 
 
         //En estos if, else if y else, lo que hago es comprobar el tamaño de la lista que obtengo de la base de datos, debido a que
@@ -96,7 +113,7 @@ public class intro_asignaturas_principales extends AppCompatActivity {
             textAsig4.setText(asignaturaList.get(3).nombre);
             textAsig5.setText(asignaturaList.get(4).nombre);
         }
-        else if(asignaturaList.size()==6){
+        if(asignaturaList.size()==6){
 
             textAsig7.setVisibility(View.GONE);
             spinnerAsig7.setVisibility(View.GONE);
@@ -110,7 +127,7 @@ public class intro_asignaturas_principales extends AppCompatActivity {
 
         }
 
-        else{
+        if(asignaturaList.size()==7){
             textAsig1.setText(asignaturaList.get(0).nombre);
             textAsig2.setText(asignaturaList.get(1).nombre);
             textAsig3.setText(asignaturaList.get(2).nombre);
@@ -140,12 +157,16 @@ public class intro_asignaturas_principales extends AppCompatActivity {
         }
 
         if(asignaturaList.size()==7){
+            arrayDeDificultades[5] = spinnerAsig6.getSelectedItem().toString();
             arrayDeDificultades[6] = spinnerAsig7.getSelectedItem().toString();
         }
 
 
-        for(int i =0;i<asignaturaList.size();i++){
+
+        for(int i = 0;i<asignaturaList.size();i++){
             long id = asignaturaList.get(i).id;
+            Log.d("MiAplicacion", "Mensaje de depuracion" + i+  " " + arrayDeDificultades[i]);
+
             db.asignaturaDao().actualizarDificultad(id,arrayDeDificultades[i]);
         }
 

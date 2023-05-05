@@ -17,8 +17,8 @@ public interface AsignaturaDao {
     @Query("SELECT * FROM Asignatura WHERE id=:id")
     Asignatura selectById(long id);
 
-    @Query("SELECT * FROM Asignatura WHERE curso=:curso AND cuatrimestre=:cuatrimestre")
-    List<Asignatura> selectByCursoAndCuatri(long curso, long cuatrimestre);
+    @Query("SELECT * FROM Asignatura WHERE curso=:curso AND cuatrimestre=:cuatrimestre AND titulacion IN(:titulacion,:comun)")
+    List<Asignatura> selectByCursoCuatriAndTitulacion(long curso, long cuatrimestre,String titulacion,String comun);
 
     @Query("UPDATE Asignatura SET dificultad = :dificultad WHERE id = :id")
     void actualizarDificultad(long id,String dificultad);
