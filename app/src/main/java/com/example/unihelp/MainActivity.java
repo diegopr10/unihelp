@@ -4,11 +4,10 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.view.View;
 import android.os.Bundle;
 import android.util.Log;
-import android.widget.Button;
-import android.widget.TextView;
-import android.widget.Toast;
 import android.content.Intent;
 import android.content.SharedPreferences;
+
+import java.util.Objects;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -22,7 +21,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         setTitle("Home");
         Log.d("Sucess","App is running");
-        getSupportActionBar().hide();
+        Objects.requireNonNull(getSupportActionBar()).hide();
         myPrefs = getSharedPreferences("MyPrefs", MODE_PRIVATE);
     }
     public void start(View view){

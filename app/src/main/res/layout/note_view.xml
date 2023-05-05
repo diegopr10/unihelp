@@ -19,17 +19,19 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="0.6"
+            android:textStyle="bold"
             android:textSize="30sp"
-            android:textColor="@color/white"
+            android:textColor="@color/teal_700"
             tools:text="Examen Parcial 1"/>
         <TextView
             android:id="@+id/note_mark_view"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="0.2"
-            android:gravity="right"
+            android:gravity="end"
+            android:textStyle="bold"
             android:textSize="30sp"
-            android:textColor="@color/white"
+            android:textColor="@color/teal_700"
             tools:text="10/10"/>
     </LinearLayout>
 
@@ -43,16 +45,16 @@
             android:layout_height="wrap_content"
             android:layout_weight="0.6"
             android:textSize="25sp"
-            android:textColor="@color/white"
+            android:textColor="@color/unihelp_second_color"
             tools:text="Sistemas Lineales"/>
         <TextView
             android:id="@+id/note_percentage_view"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="0.2"
-            android:gravity="right"
+            android:gravity="end"
             android:textSize="25sp"
-            android:textColor="@color/white"
+            android:textColor="@color/unihelp_second_color"
             tools:text="10%"/>
     </LinearLayout>
 </LinearLayout>

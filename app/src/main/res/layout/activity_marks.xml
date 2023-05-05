@@ -9,13 +9,15 @@
 
     <TextView
         android:layout_width="match_parent"
-        android:textSize="30dp"
+        android:textSize="25dp"
+        android:background="@color/unihelp_color"
         android:layout_height="0dp"
         android:layout_weight="0.2"
         android:gravity="center"
         android:textStyle="bold"
-        android:textColor="@color/black"
-        android:text="@string/marks_text"/>
+        android:textColor="@color/white"
+        android:text="@string/marks_text"
+        style= "@style/MyTextViewStyle"/>
 
     <ScrollView
         android:layout_width="match_parent"
@@ -23,6 +25,7 @@
         android:layout_weight="1">
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recycler_view"
+            android:background="@color/unihelp_color"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"/>
     </ScrollView>
@@ -30,48 +33,50 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="0.2"
-        android:orientation="horizontal">
+        android:layout_weight="0.25"
+        android:orientation="horizontal"
+        android:background="@color/unihelp_color">
 
         <Button
-            android:layout_marginTop="5dp"
+            android:layout_marginTop="10dp"
             android:layout_marginLeft="5dp"
-            android:layout_marginRight="2.5dp"
-            android:layout_marginBottom="5dp"
+            android:layout_marginRight="5dp"
+            android:layout_marginBottom="10dp"
             android:layout_width="0dp"
             android:layout_weight="1"
             android:layout_height="match_parent"
             android:text = "ADD"
-            android:textSize="20dp"
-            android:background="@drawable/rounded_corner"
+            android:textSize="20sp"
+            android:background="@drawable/button_border"
+            android:textColor="@color/white"
             android:onClick = "goToNoteCreator"
             style="@style/MyButtonStyle"/>
 
         <Button
-            android:layout_marginTop="5dp"
-            android:layout_marginLeft="2.5dp"
-            android:layout_marginRight="2.5dp"
-            android:layout_marginBottom="5dp"
-            android:layout_width="0dp"
-            android:layout_weight="1"
-            android:layout_height="match_parent"
-            android:background="@drawable/rounded_corner"
-            android:text = "edit"
-            android:textSize="20dp"
-            android:onClick = "goToNoteCreator"
-            style="@style/MyButtonStyle"/>
-
-        <Button
-            android:layout_marginTop="5dp"
-            android:layout_marginLeft="2.5dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="5dp"
             android:layout_marginRight="5dp"
-            android:layout_marginBottom="5dp"
+            android:layout_marginBottom="10dp"
             android:layout_width="0dp"
             android:layout_weight="1"
             android:layout_height="match_parent"
-            android:background="@drawable/rounded_corner"
+            android:background="@drawable/button_border"
+            android:text = "edit"
+            android:textSize="20sp"
+            android:onClick = "goToNoteCreator"
+            style="@style/MyButtonStyle"/>
+
+        <Button
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:layout_marginBottom="10dp"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:background="@drawable/button_border"
             android:text = "DELETE"
-            android:textSize="20dp"
+            android:textSize="20sp"
             android:onClick = "goToNoteCreator"
             style="@style/MyButtonStyle"/>
     </LinearLayout>
