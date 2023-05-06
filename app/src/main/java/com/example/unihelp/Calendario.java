@@ -99,6 +99,7 @@ public class Calendario extends AppCompatActivity {
             String nota = input.getText().toString();
             String asignatura = spinner.getSelectedItem().toString();
             guardarNota(fecha, nota,asignatura);
+            obtenerNotas(fecha);
         });
 
         builder.setNegativeButton("Cancelar", (dialog, which) -> dialog.cancel());
