@@ -12,6 +12,9 @@
         android:theme="@style/Theme.Unihelp"
         tools:targetApi="31">
         <activity
+            android:name=".intro_optativas"
+            android:exported="false" />
+        <activity
             android:name=".Medias"
             android:exported="false" />
         <activity

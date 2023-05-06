@@ -14,11 +14,15 @@ public class Optativa {
     @ColumnInfo(name = "nombre")
     public String nombre;
 
+    @ColumnInfo(name = "creditos")
+    public int creditos;
 
 
-    public Optativa(long id, String nombre) {
+
+    public Optativa(long id, String nombre,int creditos) {
         this.id = id;
         this.nombre = nombre;
+        this.creditos=creditos;
 
     }
 

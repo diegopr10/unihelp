@@ -23,6 +23,9 @@ public interface AsignaturaDao {
     @Query("UPDATE Asignatura SET dificultad = :dificultad WHERE id = :id")
     void actualizarDificultad(long id,String dificultad);
 
+    @Query("UPDATE Asignatura SET nombre = :newName WHERE nombre LIKE :oldName")
+    void asignarOptativa(String oldName,String newName);
+
     @Query("SELECT * FROM Asignatura WHERE nombre LIKE :nombre LIMIT 1")
     Asignatura selectByNombre(String nombre);
 

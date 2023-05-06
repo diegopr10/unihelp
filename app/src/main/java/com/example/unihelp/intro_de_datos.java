@@ -14,6 +14,8 @@ import android.widget.LinearLayout;
 import android.widget.Spinner;
 import android.widget.Toast;
 
+import java.util.List;
+
 public class intro_de_datos extends AppCompatActivity {
 
     private SharedPreferences myPrefs;
@@ -54,6 +56,12 @@ public class intro_de_datos extends AppCompatActivity {
 
     public void siguiente(View view) {
         String[] cadena = {"alias", "carrera", "curso", "cuatrimestre"};
+        //esto es un booleano que nos va a servir para comprobar si en el curso y cuatrimstre seleccionados hay optativas o no
+        //Entonces, si hay optativas nos llevará primero a la pantalla para seleccionar l
+        boolean hayOptativas = false;
+        BaseDeDatos db;
+        List<Asignatura> asignaturaList;
+        db=BaseDeDatos.getInstance(getApplicationContext());
 
         int nivel = 1;
         int experiencia = 0;
@@ -72,6 +80,7 @@ public class intro_de_datos extends AppCompatActivity {
 
         }
         else {
+
 
         /*
         Los siguientes else if los he puesto porque en la base de datos la columna de cuatrimestre y curso, los he definido
@@ -122,9 +131,34 @@ public class intro_de_datos extends AppCompatActivity {
             //Pone isFirstTime a false para que no vuelva a aparecer en el cuestionario al iniciar la app.
             //Luego le lleva a la pantalla de inicio mediante un intent.
             myPrefs.edit().putBoolean("isFirstTime", false).apply();
-            Intent intent = new Intent(this, intro_asignaturas_principales.class);
-            startActivity(intent);
-            finish();
+
+            asignaturaList = db.asignaturaDao().selectByCursoCuatriAndTitulacion(seleccion_curso_int,seleccion_cautri_int,seleccion_carrera,"comun");
+
+            for(int i=0;i<asignaturaList.size();i++){
+                if(asignaturaList.get(i).nombre.startsWith("Optativa")){
+                    hayOptativas = true;
+                    break;
+                }
+            }
+
+
+            if(hayOptativas){
+                Intent intent = new Intent(this, intro_optativas.class);
+                startActivity(intent);
+                finish();
+            }
+
+
+            else{
+                Intent intent = new Intent(this, intro_asignaturas_principales.class);
+                startActivity(intent);
+                finish();
+            }
+
+
+
+
+
         }
 
     }

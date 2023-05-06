@@ -102,6 +102,23 @@ public class intro_asignaturas_principales extends AppCompatActivity {
         //En estos if, else if y else, lo que hago es comprobar el tamaño de la lista que obtengo de la base de datos, debido a que
         //en los cursos de nuestra carrera (suponiendo que tenemos solamente asignaturas del mismo curso) podemos tener entre 5 y 7 asignaturas
         //entonces en los casos en los que haya menos de 7 asignaturas, oculto el sexto y/o séptimo spinner
+
+        if(asignaturaList.size()==4){
+
+
+
+            textAsig5.setVisibility(View.GONE);
+            spinnerAsig5.setVisibility(View.GONE);
+            textAsig6.setVisibility(View.GONE);
+            spinnerAsig6.setVisibility(View.GONE);
+            textAsig7.setVisibility(View.GONE);
+            spinnerAsig7.setVisibility(View.GONE);
+
+            textAsig1.setText(asignaturaList.get(0).nombre);
+            textAsig2.setText(asignaturaList.get(1).nombre);
+            textAsig3.setText(asignaturaList.get(2).nombre);
+            textAsig4.setText(asignaturaList.get(3).nombre);
+        }
         if(asignaturaList.size()==5){
 
 
@@ -155,24 +172,32 @@ public class intro_asignaturas_principales extends AppCompatActivity {
         arrayDeDificultades[1] = spinnerAsig2.getSelectedItem().toString();
         arrayDeDificultades[2] = spinnerAsig3.getSelectedItem().toString();
         arrayDeDificultades[3] = spinnerAsig4.getSelectedItem().toString();
-        arrayDeDificultades[4] = spinnerAsig5.getSelectedItem().toString();
+
 
         if(arrayDeDificultades[0].equals("")||arrayDeDificultades[1].equals("")
-                || arrayDeDificultades[2].equals("") || arrayDeDificultades[3].equals("") || arrayDeDificultades[4].equals("")){
+                || arrayDeDificultades[2].equals("") || arrayDeDificultades[3].equals("")){
             todosCamposSeleccionados = false;
         }
 
+        if(asignaturaList.size()==5){
+            arrayDeDificultades[4] = spinnerAsig5.getSelectedItem().toString();
+            if(arrayDeDificultades[4].equals(""))
+                todosCamposSeleccionados = false;
+        }
+
         if(asignaturaList.size()==6){
+            arrayDeDificultades[4] = spinnerAsig5.getSelectedItem().toString();
             arrayDeDificultades[5] = spinnerAsig6.getSelectedItem().toString();
             if(arrayDeDificultades[5].equals(""))
                 todosCamposSeleccionados = false;
         }
 
         if(asignaturaList.size()==7){
+            arrayDeDificultades[4] = spinnerAsig5.getSelectedItem().toString();
             arrayDeDificultades[5] = spinnerAsig6.getSelectedItem().toString();
             arrayDeDificultades[6] = spinnerAsig7.getSelectedItem().toString();
 
-            if(arrayDeDificultades[5].equals("")||arrayDeDificultades[6].equals(""))
+            if(arrayDeDificultades[4].equals("")||arrayDeDificultades[5].equals("")||arrayDeDificultades[6].equals(""))
                 todosCamposSeleccionados = false;
         }
 
