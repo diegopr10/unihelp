@@ -7,7 +7,6 @@ import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
-import android.widget.Button;
 import android.widget.CalendarView;
 import android.widget.DatePicker;
 import android.widget.EditText;
@@ -33,8 +32,10 @@ import java.util.Calendar;
 
 public class Calendario extends AppCompatActivity {
 
+    private TextView tv_Calendar;
     private CalendarView cal;
 
+    private List<Evento> eventsList;
 
     RecyclerView recycler;
 
@@ -47,9 +48,8 @@ public class Calendario extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_calendario);
 
+        tv_Calendar= findViewById(R.id.tv_Calendar);
         cal = findViewById(R.id.calendarView);
-
-
         recycler = (RecyclerView) findViewById(R.id.recycler_view);
         recycler.setLayoutManager(new LinearLayoutManager(this));
 
@@ -60,13 +60,16 @@ public class Calendario extends AppCompatActivity {
 
         cal.setOnDateChangeListener(new CalendarView.OnDateChangeListener() {
             public void onSelectedDayChange(@NonNull CalendarView calendarView, int year, int month, int day) {
-
+                /*
+                String fecha = day + "/"+ (month+1)+"/"+year;
+                */
                 GregorianCalendar calendar = new GregorianCalendar(year, month, day);
                 Date date = calendar.getTime();
                 SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
                 String fecha = formatter.format(date);
                 selectedDate = fecha;
                 obtenerNotas(fecha);
+                //Toast.makeText(Calendario.this,fecha, Toast.LENGTH_LONG).show();
 
             }
         });
@@ -119,11 +122,11 @@ public class Calendario extends AppCompatActivity {
 
         db = BaseDeDatos.getInstance(getApplicationContext());
         eventoList = (List<Evento>) db.eventoDao().selectByFecha(fecha);
-        RecyclerView recycler_view = findViewById(R.id.recycler_view);
-        recycler_view.setLayoutManager(new LinearLayoutManager(this));
-        EventViewAdapter event_view_adapter = new EventViewAdapter(getApplicationContext(),eventoList);
-        recycler_view.setAdapter(event_view_adapter);
-        event_view_adapter.notifyDataSetChanged();
+        int legth = eventoList.size();
+        System.out.println(legth);
+
+
+
 
     }
 
