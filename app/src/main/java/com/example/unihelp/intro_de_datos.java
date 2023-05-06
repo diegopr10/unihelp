@@ -54,6 +54,10 @@ public class intro_de_datos extends AppCompatActivity {
 
 
 
+
+
+
+
     public void siguiente(View view) {
         String[] cadena = {"alias", "carrera", "curso", "cuatrimestre"};
         //esto es un booleano que nos va a servir para comprobar si en el curso y cuatrimstre seleccionados hay optativas o no
@@ -140,6 +144,8 @@ public class intro_de_datos extends AppCompatActivity {
                     break;
                 }
             }
+
+
 
 
             if(hayOptativas){

@@ -96,6 +96,8 @@ public class intro_optativas extends AppCompatActivity {
             }
 
             Intent intent = new Intent(this, intro_asignaturas_principales.class);
+
+
             startActivity(intent);
             finish();
 

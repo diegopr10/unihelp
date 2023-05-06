@@ -17,11 +17,14 @@ public interface AsignaturaDao {
     @Query("SELECT * FROM Asignatura WHERE id=:id")
     Asignatura selectById(long id);
 
-    @Query("SELECT * FROM Asignatura WHERE curso=:curso AND cuatrimestre=:cuatrimestre AND titulacion IN(:titulacion,:comun)")
+    @Query("SELECT * FROM Asignatura WHERE " +
+            "curso=:curso AND cuatrimestre=:cuatrimestre AND titulacion IN(:titulacion,:comun)")
     List<Asignatura> selectByCursoCuatriAndTitulacion(long curso, long cuatrimestre,String titulacion,String comun);
+
 
     @Query("UPDATE Asignatura SET dificultad = :dificultad WHERE id = :id")
     void actualizarDificultad(long id,String dificultad);
+
 
     @Query("UPDATE Asignatura SET nombre = :newName WHERE nombre LIKE :oldName")
     void asignarOptativa(String oldName,String newName);

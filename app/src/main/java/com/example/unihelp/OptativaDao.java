@@ -16,8 +16,10 @@ public interface OptativaDao {
     @Query("SELECT * FROM Optativa WHERE id=:id")
     Optativa selectById(long id);
 
+
     @Query("SELECT * FROM Optativa WHERE creditos=:creditos")
     List<Optativa> selectByCreditos(int creditos);
+
     @Query("SELECT * FROM Optativa WHERE nombre LIKE :nombre LIMIT 1")
     Optativa selectByNombre(String nombre);
 

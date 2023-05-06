@@ -16,6 +16,7 @@ public class Optativa {
 
     @ColumnInfo(name = "creditos")
     public int creditos;
+    
 
 
 

@@ -168,6 +168,10 @@ public class intro_asignaturas_principales extends AppCompatActivity {
 
         boolean todosCamposSeleccionados = true;
 
+
+
+
+
         arrayDeDificultades[0] = spinnerAsig1.getSelectedItem().toString();
         arrayDeDificultades[1] = spinnerAsig2.getSelectedItem().toString();
         arrayDeDificultades[2] = spinnerAsig3.getSelectedItem().toString();

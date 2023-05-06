@@ -23,6 +23,7 @@ public class Asignatura {
     @ColumnInfo(name = "cuatrimestre")
     public long cuatrimestre;
 
+
     @ColumnInfo(name = "titulacion")
     public String titulacion;
 
