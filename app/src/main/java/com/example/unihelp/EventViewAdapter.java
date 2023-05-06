@@ -1,7 +1,6 @@
 package com.example.unihelp;
 
 import android.content.Context;
-import android.provider.CalendarContract;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,6 +13,7 @@ import java.util.List;
 
 
 public class EventViewAdapter extends RecyclerView.Adapter<EventViewAdapter.EventViewHolder> {
+
 
     private Context context;
     private List<Evento> eventsList;
