@@ -35,6 +35,7 @@ public class Calendario extends AppCompatActivity {
 
     private CalendarView cal;
 
+
     RecyclerView recycler;
 
     private BaseDeDatos db;
@@ -47,6 +48,7 @@ public class Calendario extends AppCompatActivity {
         setContentView(R.layout.activity_calendario);
 
         cal = findViewById(R.id.calendarView);
+
 
         recycler = (RecyclerView) findViewById(R.id.recycler_view);
         recycler.setLayoutManager(new LinearLayoutManager(this));
@@ -122,11 +124,6 @@ public class Calendario extends AppCompatActivity {
         EventViewAdapter event_view_adapter = new EventViewAdapter(getApplicationContext(),eventoList);
         recycler_view.setAdapter(event_view_adapter);
         event_view_adapter.notifyDataSetChanged();
-
-    }
-
-    public void BorrarEvento() {
-
 
     }
 
