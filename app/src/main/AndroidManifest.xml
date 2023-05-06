@@ -11,6 +11,14 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Unihelp"
         tools:targetApi="31">
+
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="@string/google_maps_key" />
+
+        <activity
+            android:name=".location"
+            android:exported="false" />
         <activity
             android:name=".intro_optativas"
             android:exported="false" />
