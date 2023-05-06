@@ -10,6 +10,7 @@
     tools:context=".NoteCreator">
 
     <TextView
+        android:id="@+id/note_creator_title"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="0.2"
@@ -102,10 +103,26 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="0.2"
-        android:text="Añadir Califiación"
+        android:layout_gravity="center"
+        android:text="Guardar"
         android:textSize="20sp"
         android:onClick="goToMarks"
         android:layout_marginTop="20dp"
+        android:background="@drawable/button_border"
+        style="@style/MyButtonStyle"/>
+
+    <Button
+        android:id="@+id/delete_note_button"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_weight="0.1"
+        android:text="ELIMINAR"
+        android:layout_gravity="center"
+        android:textSize="15sp"
+        android:textColor="#FA3D2F"
+        android:onClick="delete_note"
+        android:layout_marginTop="20dp"
+        android:visibility="gone"
         android:background="@drawable/button_border"
         style="@style/MyButtonStyle"/>
 

@@ -18,25 +18,17 @@
         <item>@string/pref_cuarto_text</item>
     </array>
     <array name="yearValues">
-        <item>@string/pref_primero_value</item>
-        <item>@string/pref_segundo_value</item>
-        <item>@string/pref_tercero_value</item>
-        <item>@string/pref_cuarto_value</item>
+        <item>1L</item>
+        <item>2L</item>
+        <item>3L</item>
+        <item>4L</item>
     </array>
     <array name="semesterKeys">
         <item>@string/pref_first_semester_text</item>
         <item>@string/pref_second_semester_text</item>
     </array>
     <array name="semesterValues">
-        <item>@string/pref_first_semester_value</item>
-        <item>@string/pref_second_semester_value</item>
-    </array>
-    <array name="languageKeys">
-        <item>@string/pref_spanish_text</item>
-        <item>@string/pref_english_text</item>
-    </array>
-    <array name="languageValues">
-        <item>@string/pref_spanish_value</item>
-        <item>@string/pref_english_value</item>
+        <item>1L</item>
+        <item>2L</item>
     </array>
 </resources>
