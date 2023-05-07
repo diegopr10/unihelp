@@ -41,6 +41,8 @@ public class Calendario extends AppCompatActivity {
     private BaseDeDatos db;
     private List<Evento> eventoList;
 
+    private List<Asignatura> asignaturaList;
+
     private String selectedDate;
 
     protected void onCreate(Bundle savedInstanceState) {
@@ -74,7 +76,12 @@ public class Calendario extends AppCompatActivity {
 
     }
     public void agregarNota(View view) {
-        String[] subjects_array = new String[]{"Ing. de Sonido e Imagen", "Ing. de Telecom.","Ing. Telematica","Ing. Com. Espaciales"};
+        asignaturaList=db.asignaturaDao().selectAsignaturasEnCurso();
+
+        String[] subjects_array = new String[asignaturaList.size()];
+        for(int i=0;i<subjects_array.length;i++){
+            subjects_array[i] = asignaturaList.get(i).nombre;
+        }
 
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,R.layout.drop_down_item,subjects_array);
         Spinner spinner = new Spinner(this);
