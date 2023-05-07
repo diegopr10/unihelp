@@ -1,6 +1,8 @@
 package com.example.unihelp;
 
 import android.content.Context;
+import android.content.Intent;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,7 +12,6 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.List;
-
 
 public class NoteViewAdapter extends RecyclerView.Adapter<NoteViewAdapter.NoteViewHolder> {
     private Context context;
@@ -50,6 +51,17 @@ public class NoteViewAdapter extends RecyclerView.Adapter<NoteViewAdapter.NoteVi
         holder.mark.setText(String.valueOf(note.getMark()));
         holder.subject.setText(note.getSubject());
         holder.percentage.setText(String.valueOf(note.getPercentage()));
+        holder.itemView.setOnClickListener((v)->{
+            Log.d("works","onclicklistener works");
+            Intent intent = new Intent(context,NoteCreator.class);
+            intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+            intent.putExtra("id", note.getId());
+            intent.putExtra("title", note.getTitle());
+            intent.putExtra("subject", note.getSubject());
+            intent.putExtra("mark", note.getMark());
+            intent.putExtra("percentage", note.getPercentage());
+            context.startActivity(intent);
+        });
     }
 
     @Override
@@ -57,7 +69,11 @@ public class NoteViewAdapter extends RecyclerView.Adapter<NoteViewAdapter.NoteVi
         return notes_list.size();
     }
 
-    public class NoteViewHolder extends RecyclerView.ViewHolder {
+    public interface RecyclerViewClickListener{
+        void onClick(View view, int position);
+    }
+
+    public class NoteViewHolder extends RecyclerView.ViewHolder{
         private TextView title;
         private TextView subject;
         private TextView mark;

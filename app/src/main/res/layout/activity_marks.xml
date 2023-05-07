@@ -22,7 +22,8 @@
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="1">
+        android:layout_weight="1"
+        android:background="@color/unihelp_color">
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recycler_view"
             android:background="@color/unihelp_color"
@@ -45,7 +46,7 @@
             android:layout_width="0dp"
             android:layout_weight="1"
             android:layout_height="match_parent"
-            android:text = "AÑADIR"
+            android:text = "AÑADIR NOTA"
             android:textSize="18sp"
             android:background="@drawable/button_border"
             android:textColor="@color/white"
@@ -61,23 +62,9 @@
             android:layout_weight="1"
             android:layout_height="match_parent"
             android:background="@drawable/button_border"
-            android:text = "BORRAR"
+            android:text = "CALC. MEDIAS"
             android:textSize="18sp"
             android:onClick = "goToMedias"
-            style="@style/MyButtonStyle"/>
-
-        <Button
-            android:layout_marginTop="10dp"
-            android:layout_marginLeft="5dp"
-            android:layout_marginRight="5dp"
-            android:layout_marginBottom="10dp"
-            android:layout_width="0dp"
-            android:layout_weight="1"
-            android:layout_height="match_parent"
-            android:background="@drawable/button_border"
-            android:text = "MEDIAS"
-            android:textSize="18sp"
-            android:onClick = "goToNoteDelete"
             style="@style/MyButtonStyle"/>
     </LinearLayout>
 

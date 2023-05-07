@@ -2,10 +2,14 @@
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
 
     <PreferenceCategory android:title="@string/user_settings">
+
         <EditTextPreference
             android:defaultValue=""
+            android:textSize="21dp"
+            android:textColor="@color/white"
             android:key="alias"
-            android:title="@string/pref_title_name" />
+            android:title="@string/pref_title_name"
+            style="@style/PreferenceScreenStyle"/>
 
         <ListPreference
             android:entries="@array/degreeKeys"
@@ -25,25 +29,4 @@
             android:key="cuatrimestre"
             android:title="@string/pref_title_semester" />
     </PreferenceCategory>
-
-    <PreferenceCategory android:title="@string/app_settings">
-        <ListPreference
-            android:entries="@array/languageKeys"
-            android:entryValues="@array/languageValues"
-            android:key="idioma"
-            android:title="@string/pref_title_language"
-            android:textColor="@color/white"/>
-        <CheckBoxPreference
-            android:defaultValue="false"
-            android:key="allow_location"
-            android:title="@string/pref_allow_location"
-            android:textColor="@color/white"/>
-    </PreferenceCategory>
-
-    <SwitchPreference
-        android:defaultValue="false"
-        android:key="dark_mode"
-        android:title="@string/pref_dark_mode"
-        android:textColor="@color/white"/>
-
 </PreferenceScreen>
