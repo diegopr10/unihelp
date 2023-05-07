@@ -58,10 +58,17 @@ public class location extends AppCompatActivity implements OnMapReadyCallback {
             public void onClick(View view) {
                 if (currentLocation ==null){
                     //Esto dolo pasa si todavia no se ha inicializado, y esto se debe porque no ha dado los permisos para obtebner su ubi;
-                    Toast.makeText(this, "No se pudo encontrar tu ubicacion actual", Toast.LENGTH_LONG).show();
+                    Toast.makeText(getApplicationContext(), "No se pudo encontrar tu ubicacion actual", Toast.LENGTH_LONG).show();
                 }else{
                     float distance = calculateDisToUc3m(currentLocation);
-                    Toast.makeText(this, "Estas a "+ distance+ "m de distancia de la Uc3m", Toast.LENGTH_LONG).show();
+                    if (distance>=1000){
+                        distance = distance/1000;
+                        distance = Math.round(distance);
+                        Toast.makeText(getApplicationContext(), "Estas a "+ distance+ "Km de distancia de la Uc3m", Toast.LENGTH_LONG).show();
+                    }else{
+                        Toast.makeText(getApplicationContext(), "Estas a "+ distance+ "m de distancia de la Uc3m", Toast.LENGTH_LONG).show();
+
+                    }
 
 
                 }
@@ -156,7 +163,7 @@ public class location extends AppCompatActivity implements OnMapReadyCallback {
         );
 
     }
-    private float calculateDisToUc3m(LatLng myLocation ){
+    private float calculateDisToUc3m(LatLng myLocation){
 
         // Creamos dos objetos Location a partir de los LatLng
         Location locationUc3m = new Location("Location Uc3m");
