@@ -47,24 +47,10 @@
             android:layout_weight="1"
             android:layout_height="match_parent"
             android:text = "AÑADIR NOTA"
-            android:textSize="18sp"
+            android:textSize="20sp"
             android:background="@drawable/button_border"
             android:textColor="@color/white"
             android:onClick = "goToNoteCreator"
-            style="@style/MyButtonStyle"/>
-
-        <Button
-            android:layout_marginTop="10dp"
-            android:layout_marginLeft="5dp"
-            android:layout_marginRight="5dp"
-            android:layout_marginBottom="10dp"
-            android:layout_width="0dp"
-            android:layout_weight="1"
-            android:layout_height="match_parent"
-            android:background="@drawable/button_border"
-            android:text = "CALC. MEDIAS"
-            android:textSize="18sp"
-            android:onClick = "goToMedias"
             style="@style/MyButtonStyle"/>
     </LinearLayout>
 

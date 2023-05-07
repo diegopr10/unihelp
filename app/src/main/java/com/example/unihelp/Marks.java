@@ -32,9 +32,4 @@ public class Marks extends AppCompatActivity {
         startActivity(intent);
         finish();
     }
-    public void goToMedias(View view){
-        Intent intent = new Intent(this, Medias.class);
-        startActivity(intent);
-        finish();
-    }
 }
