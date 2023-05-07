@@ -10,12 +10,15 @@ import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 public class inicio extends AppCompatActivity {
     private TextView alias;
     private ImageView fotoPerfil;
+
+
     static final int REQUEST_IMAGE_GET = 1;
     Uri fullPhotoUri;
 
@@ -26,6 +29,7 @@ public class inicio extends AppCompatActivity {
 
         alias = (TextView) findViewById(R.id.alias);
         fotoPerfil = (ImageView)findViewById(R.id.fotoDePerfil);
+
 
         SharedPreferences preferencias = getSharedPreferences("MyPrefs", Context.MODE_PRIVATE);
 
@@ -54,6 +58,10 @@ public class inicio extends AppCompatActivity {
     }
     public void go_to_calendario(View view){
         Intent nuevoIntent = new Intent(this,Calendario.class);
+        startActivity(nuevoIntent);
+    }
+    public void goToLocalizacion(View view){
+        Intent nuevoIntent = new Intent(this, location.class);
         startActivity(nuevoIntent);
     }
 
