@@ -51,7 +51,7 @@
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Asignatura:"
+            android:hint="@string/subject_text"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense.ExposedDropdownMenu">
 
             <AutoCompleteTextView
@@ -104,7 +104,7 @@
         android:layout_height="0dp"
         android:layout_weight="0.2"
         android:layout_gravity="center"
-        android:text="Guardar"
+        android:text="@string/save_note_text"
         android:textSize="20sp"
         android:onClick="goToMarks"
         android:layout_marginTop="20dp"
@@ -116,7 +116,7 @@
         android:layout_width="wrap_content"
         android:layout_height="0dp"
         android:layout_weight="0.1"
-        android:text="ELIMINAR"
+        android:text="@string/delete_note_text"
         android:layout_gravity="center"
         android:textSize="15sp"
         android:textColor="#FA3D2F"
