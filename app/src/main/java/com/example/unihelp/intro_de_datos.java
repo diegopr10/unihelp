@@ -120,10 +120,10 @@ public class intro_de_datos extends AppCompatActivity {
             obj_editor.putString(cadena[1], seleccion_carrera);
             obj_editor.apply();
 
-            obj_editor.putLong(cadena[2], seleccion_curso_int);
+            obj_editor.putString(cadena[2], String.valueOf(seleccion_curso_int));
             obj_editor.apply();
 
-            obj_editor.putLong(cadena[3], seleccion_cautri_int);
+            obj_editor.putString(cadena[3], String.valueOf(seleccion_cautri_int));
             obj_editor.apply();
 
             obj_editor.putInt("nivel", nivel);

@@ -1,32 +1,34 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <PreferenceCategory android:title="@string/user_settings">
+    <PreferenceCategory android:title="@string/user_settings_title">
 
         <EditTextPreference
             android:defaultValue=""
-            android:textSize="21dp"
-            android:textColor="@color/white"
             android:key="alias"
             android:title="@string/pref_title_name"
-            style="@style/PreferenceScreenStyle"/>
+            android:summary="Escribe el nombre que aparecerá en tu perfil"/>
 
         <ListPreference
+            android:defaultValue=""
             android:entries="@array/degreeKeys"
             android:entryValues="@array/degreeValues"
             android:key="carrera"
-            android:title="@string/pref_title_degree" />
+            android:title="@string/pref_title_degree"
+            android:summary="Selecciona la carrera que estás cursando"/>
 
         <ListPreference
             android:entries="@array/yearKeys"
             android:entryValues="@array/yearValues"
             android:key="curso"
-            android:title="@string/pref_title_year" />
+            android:title="@string/pref_title_year"
+            android:summary="Selecciona el curso en el que estás acutalmente"/>
 
         <ListPreference
             android:entries="@array/semesterKeys"
             android:entryValues="@array/semesterValues"
             android:key="cuatrimestre"
-            android:title="@string/pref_title_semester" />
+            android:title="@string/pref_title_semester"
+            android:summary="Selecciona en que cuatrimestre estás actualmente"/>
     </PreferenceCategory>
 </PreferenceScreen>

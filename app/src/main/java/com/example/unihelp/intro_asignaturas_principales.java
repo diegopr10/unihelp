@@ -43,8 +43,8 @@ public class intro_asignaturas_principales extends AppCompatActivity {
         setContentView(R.layout.activity_intro_asignaturas_principales);
 
         preferencias = getSharedPreferences("MyPrefs", MODE_PRIVATE);
-        numero_curso = preferencias.getLong("curso",0);
-        numero_cuatrimestre = preferencias.getLong("cuatrimestre",0);
+        numero_curso = Long.parseLong(preferencias.getString("curso",""));
+        numero_cuatrimestre = Long.parseLong(preferencias.getString("cuatrimestre",""));
         titulacion = preferencias.getString("carrera","");
 
 
