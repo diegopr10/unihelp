@@ -22,7 +22,7 @@
 
         <activity
             android:name=".location"
-            android:exported="false" />
+            />
         <activity
             android:name=".intro_optativas"
             android:exported="false" />
