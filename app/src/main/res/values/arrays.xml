@@ -1,22 +1,22 @@
 <resources>
+
     <array name="degreeKeys">
-        <item>@string/pref_sound_image_text</item>
-        <item>@string/pref_teleco_text</item>
-        <item>@string/pref_telematics_text</item>
-        <item>@string/pref_space_text</item>
+        <item>Ing. de Sonido e Imagen</item>
+        <item>Ing. de Telecomunicaciones</item>
+        <item>Ing. Telemática</item>
+        <item>Ing. de Comunicaciones Móviles y Espaciales</item>
     </array>
     <array name="degreeValues">
-        <item>@string/pref_sound_image_value</item>
-        <item>@string/pref_teleco_value</item>
-        <item>@string/pref_telematics_value</item>
-        <item>@string/pref_space_value</item>
+        <item>Sonido e Imagen</item>
+        <item>Teleco</item>
+        <item>Telemática</item>
+        <item>Espaciales</item>
     </array>
     <array name="yearKeys">
-
-        <item>@string/pref_primero_text</item>
-        <item>@string/pref_segundo_text</item>
-        <item>@string/pref_tercero_text</item>
-        <item>@string/pref_cuarto_text</item>
+        <item>1º</item>
+        <item>2º</item>
+        <item>3º</item>
+        <item>4º</item>
     </array>
     <array name="yearValues">
         <item>1L</item>
@@ -25,8 +25,8 @@
         <item>4L</item>
     </array>
     <array name="semesterKeys">
-        <item>@string/pref_first_semester_text</item>
-        <item>@string/pref_second_semester_text</item>
+        <item>1er</item>
+        <item>2do</item>
     </array>
     <array name="semesterValues">
         <item>1L</item>
