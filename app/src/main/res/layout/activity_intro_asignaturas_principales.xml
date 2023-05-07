@@ -16,7 +16,7 @@
         android:layout_marginTop="5dp"
         android:gravity="center"
         android:fontFamily="@font/slackey_regular"
-        android:text="¿Cómo se te dan las asignaturas?"
+        android:text="@string/como_asignaturas_text"
         android:textColor="@color/white"
         android:textSize="24sp"
         android:textAlignment="center"/>
