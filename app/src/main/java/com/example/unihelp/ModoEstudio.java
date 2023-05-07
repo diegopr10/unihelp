@@ -2,6 +2,7 @@ package com.example.unihelp;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import java.util.Locale;
@@ -21,6 +22,7 @@ public class ModoEstudio extends AppCompatActivity {
     private TextView tv_timer;
     private ProgressBar progress_bar;
     private Button btn_start;
+    private Button bt_Localizacion;
 
     private boolean isCountDownTimerRunning = false;
     private CountDownTimer countDownTimer;
@@ -40,6 +42,7 @@ public class ModoEstudio extends AppCompatActivity {
         progress_bar = findViewById(R.id.progress_bar);
         btn_start = findViewById(R.id.btn_start);
         tv_timer = findViewById(R.id.tv_timer);
+        bt_Localizacion = findViewById(R.id.bt_localizacion);
 
         // Botón de inicio
         btn_start.setOnClickListener(new View.OnClickListener() {
@@ -85,8 +88,15 @@ public class ModoEstudio extends AppCompatActivity {
                     Toast.makeText(ModoEstudio.this, "Ya hay un temporizador en funcionamiento.", Toast.LENGTH_SHORT).show();
                 }
             }
-        });
+        }  );
+
     }
+
+    public void goToLocalizacion(View view){
+        Intent nuevoIntent = new Intent(this, location.class);
+        startActivity(nuevoIntent);
+    }
+
 
         //Metodo para asegurarse de que el temporizador se detenga correctamente si la actividad se
         // destruye antes de que finalice el temporizador
