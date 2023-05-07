@@ -1,39 +1,34 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     android:background="@color/unihelp_color"
     tools:context=".intro_asignaturas_principales">
 
+    <TextView
+        android:id="@+id/como_se_te_dan"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.2"
+        android:layout_marginTop="5dp"
+        android:fontFamily="@font/slackey_regular"
+        android:text="¿Cómo se te dan las asignaturas?"
+        android:textColor="@color/white"
+        android:textSize="24sp"
+        android:textAlignment="center"/>
 
     <ScrollView
-        android:layout_width="391dp"
-        android:layout_height="720dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
-
-            <TextView
-                android:id="@+id/como_se_te_dan"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="4dp"
-                android:fontFamily="@font/slackey_regular"
-                android:text="¿Cómo se te dan las asignaturas?"
-                android:textColor="@color/white"
-                android:textSize="24sp"
-                android:textAlignment="center"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
                 android:id="@+id/asignatura1"
@@ -46,10 +41,7 @@
                 android:text="texto"
                 android:textAlignment="center"
                 android:textColor="@color/white"
-                android:textSize="20sp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/como_se_te_dan" />
+                android:textSize="20sp"/>
 
             <Spinner
                 android:id="@+id/spinner_asignatura1"
@@ -61,10 +53,7 @@
                 android:inputType="textPersonName"
                 android:singleLine="true"
                 android:textColor="@color/white"
-                android:textSize="24sp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/asignatura1" />
+                android:textSize="24sp"/>
 
             <TextView
                 android:id="@+id/asignatura2"
@@ -77,10 +66,7 @@
                 android:text="texto"
                 android:textColor="@color/white"
                 android:textSize="20sp"
-                android:textAlignment="center"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/spinner_asignatura1" />
+                android:textAlignment="center"/>
 
             <Spinner
                 android:id="@+id/spinner_asignatura2"
@@ -109,9 +95,6 @@
                 android:textColor="@color/white"
                 android:textSize="20sp"
                 android:textAlignment="center"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/spinner_asignatura2" />
 
             <Spinner
                 android:id="@+id/spinner_asignatura3"
@@ -124,9 +107,6 @@
                 android:singleLine="true"
                 android:textColor="@color/white"
                 android:textSize="24sp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/asignatura3" />
 
             <TextView
                 android:id="@+id/asignatura4"
@@ -140,9 +120,6 @@
                 android:textColor="@color/white"
                 android:textSize="20sp"
                 android:textAlignment="center"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/spinner_asignatura3" />
 
             <Spinner
                 android:id="@+id/spinner_asignatura4"
@@ -154,10 +131,7 @@
                 android:inputType="textPersonName"
                 android:singleLine="true"
                 android:textColor="@color/white"
-                android:textSize="24sp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/asignatura4" />
+                android:textSize="24sp"/>
 
             <TextView
                 android:id="@+id/asignatura5"
@@ -170,10 +144,7 @@
                 android:text="texto"
                 android:textColor="@color/white"
                 android:textSize="20sp"
-                android:textAlignment="center"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/spinner_asignatura4" />
+                android:textAlignment="center"/>
 
             <Spinner
                 android:id="@+id/spinner_asignatura5"
@@ -185,10 +156,7 @@
                 android:inputType="textPersonName"
                 android:singleLine="true"
                 android:textColor="@color/white"
-                android:textSize="24sp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/asignatura5" />
+                android:textSize="24sp"/>
 
             <TextView
                 android:id="@+id/asignatura6"
@@ -201,10 +169,7 @@
                 android:text="texto"
                 android:textColor="@color/white"
                 android:textSize="20sp"
-                android:textAlignment="center"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/spinner_asignatura5" />
+                android:textAlignment="center"/>
 
             <Spinner
                 android:id="@+id/spinner_asignatura6"
@@ -216,10 +181,7 @@
                 android:inputType="textPersonName"
                 android:singleLine="true"
                 android:textColor="@color/white"
-                android:textSize="24sp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/asignatura6" />
+                android:textSize="24sp"/>
 
             <TextView
                 android:id="@+id/asignatura7"
@@ -232,10 +194,7 @@
                 android:text="texto"
                 android:textColor="@color/white"
                 android:textSize="20sp"
-                android:textAlignment="center"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/spinner_asignatura6" />
+                android:textAlignment="center"/>
 
             <Spinner
                 android:id="@+id/spinner_asignatura7"
@@ -247,26 +206,19 @@
                 android:inputType="textPersonName"
                 android:singleLine="true"
                 android:textColor="@color/white"
-                android:textSize="24sp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/asignatura7" />
-
-            <Button
-                android:id="@+id/button_siguiente"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="32dp"
-                android:layout_marginBottom="4dp"
-                android:background="@color/unihelp_second_color"
-                android:fontFamily="@font/slackey_regular"
-                android:onClick="siguiente2"
-                android:text="@string/next_text"
-                android:textColor="@color/white"
-                android:textSize="18sp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent" />
-
+                android:textSize="24sp"/>
         </LinearLayout>
     </ScrollView>
-</androidx.constraintlayout.widget.ConstraintLayout>
+
+    <Button
+        android:id="@+id/button_siguiente"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.1"
+        android:background="@color/unihelp_second_color"
+        android:fontFamily="@font/slackey_regular"
+        android:onClick="siguiente2"
+        android:text="@string/next_text"
+        android:textColor="@color/white"
+        android:textSize="18sp"/>
+</LinearLayout>

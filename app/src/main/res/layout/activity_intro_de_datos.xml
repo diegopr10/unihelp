@@ -1,45 +1,43 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/unihelp_color"
+    android:orientation="vertical"
     tools:context=".intro_de_datos">
 
     <TextView
         android:id="@+id/cuentanos_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="28dp"
+        android:layout_marginTop="25dp"
+        android:layout_gravity="center"
         android:fontFamily="@font/slackey_regular"
         android:text="@string/cuentanos_text"
         android:textColor="@color/white"
-        android:textSize="28sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.421"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
+        android:textSize="28sp"/>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"/>
     <TextView
         android:id="@+id/comoTeLlamas_text"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="60dp"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:gravity="center"
         android:fontFamily="@font/slackey_regular"
         android:text="@string/como_llamas_text"
         android:textColor="@color/white"
-
-        android:textSize="24sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/cuentanos_text" />
+        android:textSize="24sp"/>
 
     <EditText
         android:id="@+id/campo_nombre"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
         android:drawableLeft="@color/white"
         android:ems="10"
         android:fontFamily="@font/slackey_regular"
@@ -47,112 +45,86 @@
         android:inputType="textPersonName"
         android:singleLine="true"
         android:textColor="@color/white"
-        android:textSize="24sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/comoTeLlamas_text"/>
+        android:textSize="24sp"/>
 
     <TextView
         android:id="@+id/queEstudias_text"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="28dp"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:gravity="center"
         android:fontFamily="@font/slackey_regular"
         android:text="@string/que_estudias_text"
         android:textColor="@color/white"
-        android:textSize="24sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/campo_nombre" />
+        android:textSize="24sp"/>
 
     <Spinner
         android:id="@+id/spinner_carreras"
-        android:layout_width="321dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
         android:ems="10"
         android:fontFamily="@font/slackey_regular"
         android:inputType="textPersonName"
         android:singleLine="true"
         android:textColor="@color/white"
-        android:textSize="24sp"
-
-
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/queEstudias_text" />
+        android:textSize="24sp" />
 
     <TextView
         android:id="@+id/queCurso_text"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="28dp"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:gravity="center"
         android:fontFamily="@font/slackey_regular"
         android:text="@string/que_curso_text"
         android:textColor="@color/white"
-        android:textSize="24sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/spinner_carreras" />
+        android:textSize="24sp"/>
 
     <Spinner
         android:id="@+id/spinner_curso"
-        android:layout_width="321dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
         android:ems="10"
         android:fontFamily="@font/slackey_regular"
         android:inputType="textPersonName"
         android:singleLine="true"
         android:textColor="@color/white"
-        android:textSize="40sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.49"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/queCurso_text" />
+        android:textSize="40sp"/>
 
     <TextView
         android:id="@+id/queIdioma_text"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="28dp"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:gravity="center"
         android:fontFamily="@font/slackey_regular"
         android:text="@string/que_cuatri"
         android:textColor="@color/white"
-        android:textSize="24sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.588"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/spinner_curso" />
+        android:textSize="24sp"/>
 
     <Spinner
         android:id="@+id/spinner_idioma"
-        android:layout_width="321dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
         android:ems="10"
         android:fontFamily="@font/slackey_regular"
         android:inputType="textPersonName"
         android:singleLine="true"
         android:textColor="@color/white"
-        android:textSize="24sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.49"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/queIdioma_text" />
+        android:textSize="24sp" />
 
     <Button
         android:id="@+id/button_siguiente"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="32dp"
-        android:layout_marginBottom="4dp"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
         android:background="@color/unihelp_second_color"
         android:fontFamily="@font/slackey_regular"
         android:onClick="siguiente"
         android:text="@string/next_text"
         android:textColor="@color/white"
-        android:textSize="18sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+        android:textSize="18sp" />
+</LinearLayout>

@@ -14,8 +14,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 public class inicio extends AppCompatActivity {
-
-    private TextView alias,nivel,experiencia;
+    private TextView alias;
     private ImageView fotoPerfil;
     static final int REQUEST_IMAGE_GET = 1;
     Uri fullPhotoUri;
@@ -26,23 +25,12 @@ public class inicio extends AppCompatActivity {
         setContentView(R.layout.activity_inicio);
 
         alias = (TextView) findViewById(R.id.alias);
-        nivel = (TextView) findViewById(R.id.level_value);
-        experiencia = (TextView) findViewById(R.id.exp_value);
         fotoPerfil = (ImageView)findViewById(R.id.fotoDePerfil);
-
 
         SharedPreferences preferencias = getSharedPreferences("MyPrefs", Context.MODE_PRIVATE);
 
         String cadena_alias = preferencias.getString("alias","");
         alias.setText(cadena_alias);
-
-        int int_nivel = preferencias.getInt("nivel",1);
-        String cadena_nivel = String.valueOf(int_nivel);
-        nivel.setText(cadena_nivel);
-
-        int int_exp = preferencias.getInt("experiencia",0);
-        String cadena_exp = String.valueOf(int_exp) + "/100";
-        experiencia.setText(cadena_exp);
 
         fotoPerfil.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {

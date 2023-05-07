@@ -18,9 +18,6 @@
     <string name="calendario_text">Calendario</string>
     <string name="links_text">Links</string>
     <string name="alias_text">Alias</string>
-    <string name="level_text">Nivel:</string>
-    <string name="exp_text">Exp:</string>
-    <string name="settings_text">SETTINGS</string>
     <!--Pantalla Ajustes-->
     <string name="settings_title">Ajustes</string>
     <string name="cambiar_nombre_text">Nombre</string>
@@ -37,6 +34,7 @@
 
     <!--Pantalla Calificaciones-->
     <string name="marks_text">MIS CALIFICACIONES</string>
+    <string name="add_note_button_text">AÑADIR NOTA</string>
     <string name="title_activity_create_note">CreateNote</string>
     <string name="note_creator_title_text">NUEVA CALIFICACIÓN</string>
     <string name="note_title_text">Título de la prueba:</string>
