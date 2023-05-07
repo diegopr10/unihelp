@@ -12,6 +12,7 @@
         <item>@string/pref_space_value</item>
     </array>
     <array name="yearKeys">
+
         <item>@string/pref_primero_text</item>
         <item>@string/pref_segundo_text</item>
         <item>@string/pref_tercero_text</item>
