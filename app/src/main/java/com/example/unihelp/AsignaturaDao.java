@@ -24,6 +24,9 @@ public interface AsignaturaDao {
     @Query("UPDATE Asignatura SET dificultad = :dificultad WHERE id = :id")
     void actualizarDificultad(long id,String dificultad);
 
+    @Query("SELECT * FROM Asignatura WHERE dificultad IS NOT NULL")
+    List<Asignatura> selectAsignaturasEnCurso();
+
 
     @Query("UPDATE Asignatura SET nombre = :newName WHERE nombre LIKE :oldName")
     void asignarOptativa(String oldName,String newName);

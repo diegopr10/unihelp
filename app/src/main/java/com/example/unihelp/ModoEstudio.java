@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.View;
 import java.util.Locale;
 import android.os.CountDownTimer;
@@ -15,6 +16,7 @@ import android.widget.Toast;
 
 
 
+
 public class ModoEstudio extends AppCompatActivity {
 
     private EditText et_time_input;
@@ -22,7 +24,7 @@ public class ModoEstudio extends AppCompatActivity {
     private TextView tv_timer;
     private ProgressBar progress_bar;
     private Button btn_start;
-    private Button bt_Localizacion;
+
 
     private boolean isCountDownTimerRunning = false;
     private CountDownTimer countDownTimer;
@@ -42,7 +44,7 @@ public class ModoEstudio extends AppCompatActivity {
         progress_bar = findViewById(R.id.progress_bar);
         btn_start = findViewById(R.id.btn_start);
         tv_timer = findViewById(R.id.tv_timer);
-        bt_Localizacion = findViewById(R.id.bt_localizacion);
+
 
         // Botón de inicio
         btn_start.setOnClickListener(new View.OnClickListener() {
@@ -50,6 +52,10 @@ public class ModoEstudio extends AppCompatActivity {
 
             public void onClick(View v) {
 
+                if (TextUtils.isEmpty(et_time_input.getText())) {
+                    Toast.makeText(ModoEstudio.this, "Por favor, ingrese un tiempo.", Toast.LENGTH_SHORT).show();
+                    return;
+                }
 
                 if (!isCountDownTimerRunning) {
                     // Obtener el tiempo en minutos desde el campo de entrada de tiempo
@@ -77,6 +83,8 @@ public class ModoEstudio extends AppCompatActivity {
                             tv_timer.setText("00:00");
                             Toast.makeText(ModoEstudio.this, "¡El tiempo ha terminado!", Toast.LENGTH_SHORT).show();
                             isCountDownTimerRunning = false;
+
+
                         }
                     };
 
@@ -91,12 +99,6 @@ public class ModoEstudio extends AppCompatActivity {
         }  );
 
     }
-
-    public void goToLocalizacion(View view){
-        Intent nuevoIntent = new Intent(this, location.class);
-        startActivity(nuevoIntent);
-    }
-
 
         //Metodo para asegurarse de que el temporizador se detenga correctamente si la actividad se
         // destruye antes de que finalice el temporizador
