@@ -12,11 +12,12 @@
     <string name="que_idioma_text">¿Qué idioma usas?</string>
     <string name="que_cuatri">¿Qué cuatri cursas?</string>
     <string name="next_text">Siguiente</string>
+    <string name="como_asignaturas_text">¿CÓMO SE TE DAN LAS ASIGNATURAS?</string>
     <!--Pantalla Inicio-->
     <string name="modo_estudio_text">Modo estudio</string>
     <string name="notas_text">Notas</string>
     <string name="calendario_text">Calendario</string>
-    <string name="links_text">Links</string>
+    <string name="localizacion_text">Localizacion</string>
     <string name="alias_text">Alias</string>
     <!--Pantalla Ajustes-->
     <string name="settings_title">Ajustes</string>
@@ -50,5 +51,6 @@
 
     <string name="hello_first_fragment">Hello first fragment</string>
     <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+    <string name="default_notification_channel_id">CanalDeNotificacion</string>
 
 </resources>
