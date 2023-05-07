@@ -7,7 +7,9 @@ import androidx.core.content.ContextCompat;
 
 import android.Manifest;
 import android.content.pm.PackageManager;
+import android.location.Location;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Toast;
 
 import com.google.android.gms.location.FusedLocationProviderClient;
@@ -18,6 +20,8 @@ import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
+import android.widget.ImageButton;
+
 
 public class location extends AppCompatActivity implements OnMapReadyCallback {
 
@@ -27,12 +31,42 @@ public class location extends AppCompatActivity implements OnMapReadyCallback {
 
     private static final int LOCATION_REQUEST_CODE = 0;
 
+    private ImageButton btUniversidad;
+    private ImageButton btCalcularDis;
+    private LatLng currentLocation;
+
+    private LatLng Uc3mLocation = new LatLng(40.332306, -3.765627);
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_location);
         createFragment();
         fusedLocationClient = LocationServices.getFusedLocationProviderClient(this);
+        btUniversidad = findViewById(R.id.btUniversidad);
+        btCalcularDis = findViewById(R.id.btCalcularDis);
+        btUniversidad.setOnClickListener(new View.OnClickListener(){
+
+            @Override
+            public void onClick(View view) {
+                zoomToLocation(Uc3mLocation);
+            }
+        });
+        btCalcularDis.setOnClickListener(new View.OnClickListener(){
+
+            @Override
+            public void onClick(View view) {
+                if (currentLocation ==null){
+                    //Esto dolo pasa si todavia no se ha inicializado, y esto se debe porque no ha dado los permisos para obtebner su ubi;
+                    Toast.makeText(this, "No se pudo encontrar tu ubicacion actual", Toast.LENGTH_LONG).show();
+                }else{
+                    float distance = calculateDisToUc3m(currentLocation);
+                    Toast.makeText(this, "Estas a "+ distance+ "m de distancia de la Uc3m", Toast.LENGTH_LONG).show();
+
+
+                }
+            }
+        });
     }
 
     @Override
@@ -40,17 +74,13 @@ public class location extends AppCompatActivity implements OnMapReadyCallback {
         map = googleMap;
         createMarker();
         enableMyLocation();
+
     }
 
     private void createMarker() {
-        LatLng Uc3mLocation = new LatLng(40.332306, -3.765627);
         MarkerOptions marker = new MarkerOptions().position(Uc3mLocation).title("UC3M");
         map.addMarker(marker);
-        map.animateCamera(
-                CameraUpdateFactory.newLatLngZoom(Uc3mLocation, 17f),
-                4000,
-                null
-        );
+        zoomToLocation(Uc3mLocation);
     }
     private void createFragment() {
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager().findFragmentById(R.id.fragmentMap);
@@ -89,12 +119,7 @@ public class location extends AppCompatActivity implements OnMapReadyCallback {
             fusedLocationClient.getLastLocation()
                     .addOnSuccessListener(this, location -> {
                         if (location != null) {
-                            LatLng currentLocation = new LatLng(location.getLatitude(), location.getLongitude());
-//                            map.animateCamera(
-//                                    CameraUpdateFactory.newLatLngZoom(currentLocation, 17f),
-//                                    4000,
-//                                    null
-//                            );
+                            currentLocation = new LatLng(location.getLatitude(), location.getLongitude());
                         } else {
                             Toast.makeText(this, "No se pudo obtener la ubicación actual", Toast.LENGTH_SHORT).show();
                         }
@@ -120,5 +145,30 @@ public class location extends AppCompatActivity implements OnMapReadyCallback {
                 break;
         }
 
+    }
+    public void zoomToLocation(LatLng ubicacion){
+
+        //Esta fncion solo hace un zoom a una localizacion
+        map.animateCamera(
+                CameraUpdateFactory.newLatLngZoom(ubicacion, 17f),
+                4000,
+                null
+        );
+
+    }
+    private float calculateDisToUc3m(LatLng myLocation ){
+
+        // Creamos dos objetos Location a partir de los LatLng
+        Location locationUc3m = new Location("Location Uc3m");
+        locationUc3m.setLatitude(Uc3mLocation.latitude);
+        locationUc3m.setLongitude(Uc3mLocation.longitude);
+
+        Location locationNew = new Location("Location New");
+        locationNew.setLatitude(myLocation.latitude);
+        locationNew.setLongitude(myLocation.longitude);
+
+        // Calculamos la distancia entre los dos puntos en metros
+        float distance = locationNew.distanceTo(locationUc3m);
+        return distance;
     }
 }
