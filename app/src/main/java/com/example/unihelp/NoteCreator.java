@@ -2,6 +2,7 @@ package com.example.unihelp;
 
 import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -11,6 +12,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import java.util.List;
 
 public class NoteCreator extends AppCompatActivity {
     private EditText note_title;
@@ -58,8 +61,24 @@ public class NoteCreator extends AppCompatActivity {
         }
         else pageTitle.setText("NUEVA CALIFICACIÓN");
 
+        //Mostrar las asignaturas según tu carrera, curso y cuatrimestre
 
-        String[] subjects_array = new String[]{"Ing. de Sonido e Imagen", "Ing. de Telecom.","Ing. Telematica","Ing. Com. Espaciales"};
+        SharedPreferences preferencias = getSharedPreferences("MyPrefs", MODE_PRIVATE);
+        long curso = Long.parseLong(preferencias.getString("curso",""));
+        long cuatrimestre = Long.parseLong(preferencias.getString("cuatrimestre",""));
+        String titulacion = preferencias.getString("carrera","");
+        BaseDeDatos db = BaseDeDatos.getInstance(getApplicationContext());
+        List<Asignatura> asignaturaList = db.asignaturaDao().selectByCursoCuatriAndTitulacion(curso,cuatrimestre,titulacion,"comun");
+
+        String[] subjects_array = new String[asignaturaList.size()];
+        Log.d("# de asignaturas",String.valueOf(asignaturaList.size()));
+        Log.d("curso",String.valueOf(curso));
+        Log.d("cuatrimestre",String.valueOf(cuatrimestre));
+        Log.d("carrera",titulacion);
+
+        for(int i = 0; i < asignaturaList.size(); i++){
+            subjects_array[i] = asignaturaList.get(i).nombre;
+        }
 
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,R.layout.drop_down_item,subjects_array);
         note_subject = findViewById(R.id.auto_complete);

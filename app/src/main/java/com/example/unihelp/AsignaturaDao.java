@@ -21,7 +21,6 @@ public interface AsignaturaDao {
             "curso=:curso AND cuatrimestre=:cuatrimestre AND titulacion IN(:titulacion,:comun)")
     List<Asignatura> selectByCursoCuatriAndTitulacion(long curso, long cuatrimestre,String titulacion,String comun);
 
-
     @Query("UPDATE Asignatura SET dificultad = :dificultad WHERE id = :id")
     void actualizarDificultad(long id,String dificultad);
 
