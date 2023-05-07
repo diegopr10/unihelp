@@ -5,6 +5,7 @@ import androidx.preference.PreferenceManager;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.Toast;
 
 public class PreferenceFragment extends PreferenceFragmentCompat{
@@ -13,6 +14,7 @@ public class PreferenceFragment extends PreferenceFragmentCompat{
         PreferenceManager manager = getPreferenceManager();
         manager.setSharedPreferencesName("MyPrefs");
         // Load the preferences from an XML resource
+        Log.d("preference","working");
         addPreferencesFromResource(R.xml.preference_screen);
     }
 }

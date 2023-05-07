@@ -26,9 +26,6 @@
             android:name=".Medias"
             android:exported="false" />
         <activity
-            android:name=".NoteDelete"
-            android:exported="false" />
-        <activity
             android:name=".NoteCreator"
             android:exported="false" />
         <activity

@@ -30,13 +30,11 @@ public class Marks extends AppCompatActivity {
     public void goToNoteCreator(View view){
         Intent intent = new Intent(this, NoteCreator.class);
         startActivity(intent);
-    }
-    public void goToNoteDelete(View view){
-        Intent intent = new Intent(this, NoteDelete.class);
-        startActivity(intent);
+        finish();
     }
     public void goToMedias(View view){
         Intent intent = new Intent(this, Medias.class);
         startActivity(intent);
+        finish();
     }
 }
