@@ -1,5 +1,6 @@
 package com.example.unihelp;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
@@ -9,17 +10,20 @@ import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.widget.Toast;
 
+import com.google.android.gms.location.FusedLocationProviderClient;
+import com.google.android.gms.location.LocationServices;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
-import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 
 public class location extends AppCompatActivity implements OnMapReadyCallback {
 
     private GoogleMap map;
+
+    private FusedLocationProviderClient fusedLocationClient;
 
     private static final int LOCATION_REQUEST_CODE = 0;
 
@@ -28,6 +32,7 @@ public class location extends AppCompatActivity implements OnMapReadyCallback {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_location);
         createFragment();
+        fusedLocationClient = LocationServices.getFusedLocationProviderClient(this);
     }
 
     @Override
@@ -57,13 +62,13 @@ public class location extends AppCompatActivity implements OnMapReadyCallback {
     }
 
     private void enableMyLocation() {
-        if (map != null) return; // Si el mapa no esta inicializado vete
+        if (map == null) return; // Si el mapa no esta inicializado vete
 
         if (isPermissionsGranted()) {
             map.setMyLocationEnabled(true);// Si los permisos de localizacion estan activos, activa la localizacion en tiempo real
-
+            getDeviceLocation();
         } else {
-            requestLocationPermission();//Si no, pide los permisos
+            ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.ACCESS_FINE_LOCATION}, LOCATION_REQUEST_CODE);//Si no, pide los permisos
         }
     }
 
@@ -79,19 +84,41 @@ public class location extends AppCompatActivity implements OnMapReadyCallback {
         }
     }
 
+    private void getDeviceLocation() {
+        try {
+            fusedLocationClient.getLastLocation()
+                    .addOnSuccessListener(this, location -> {
+                        if (location != null) {
+                            LatLng currentLocation = new LatLng(location.getLatitude(), location.getLongitude());
+//                            map.animateCamera(
+//                                    CameraUpdateFactory.newLatLngZoom(currentLocation, 17f),
+//                                    4000,
+//                                    null
+//                            );
+                        } else {
+                            Toast.makeText(this, "No se pudo obtener la ubicación actual", Toast.LENGTH_SHORT).show();
+                        }
+                    });
+        } catch (SecurityException e) {
+            Toast.makeText(this, "No se pudieron obtener los permisos de ubicación", Toast.LENGTH_SHORT).show();
+        }
+    }
+
+
     @Override
-    public void onRequestPermissionsResult(int requestCode, String[] permissions, int[] grantResults) {
-        if (requestCode == LOCATION_REQUEST_CODE) {
-            if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+        switch(requestCode) {
+            case LOCATION_REQUEST_CODE:
+                if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+                    enableMyLocation();
+                } else {
+                    Toast.makeText(this, "Para activar la localización ve a ajustes y acepta los permisos", Toast.LENGTH_SHORT).show();
+                }
+                break;
+            default:
+                break;
+        }
 
-                //Si le pedimos los permisos y los acepta, le le activamos la localizacion
-                map.setMyLocationEnabled(true);
-
-            } else {
-
-                //Si despues de pedirselos no los acpeta que se vaya  a activar la loscalizacion en ajustes
-                Toast.makeText(this, "Para activar la localización ve a ajustes y acepta los permisos", Toast.LENGTH_SHORT).show();
-            }
-        }//Esto es para comprobar que no haya aceptado otro permiso, aunque no deberia pasar
     }
 }
