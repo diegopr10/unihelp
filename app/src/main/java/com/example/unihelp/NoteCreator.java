@@ -20,8 +20,6 @@ public class NoteCreator extends AppCompatActivity {
     private AutoCompleteTextView note_subject;
     private EditText note_number;
     private EditText note_percentage;
-    private TextView pageTitle;
-    private Button delete_note;
     private boolean isEditMode = false;
     long last_id;
     String last_title;
@@ -33,8 +31,8 @@ public class NoteCreator extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_note_creator);
-        pageTitle = findViewById(R.id.note_creator_title);
-        delete_note = this.<Button>findViewById(R.id.delete_note_button);
+        TextView pageTitle = findViewById(R.id.note_creator_title);
+        Button delete_note = this.<Button>findViewById(R.id.delete_note_button);
 
         //Obtener valores del cuando tocamos la nota
         last_id = getIntent().getLongExtra("id",0);
@@ -56,10 +54,12 @@ public class NoteCreator extends AppCompatActivity {
         }
 
         if(isEditMode){
-            pageTitle.setText("EDITAR CALIFICACIÓN");
+            pageTitle.setText(R.string.edit_note_text);
             delete_note.setVisibility(View.VISIBLE);
         }
-        else pageTitle.setText("NUEVA CALIFICACIÓN");
+        else {
+            pageTitle.setText(R.string.note_creator_title_text);
+        }
 
         //Mostrar las asignaturas según tu carrera, curso y cuatrimestre
 

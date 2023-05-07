@@ -43,6 +43,10 @@
     <string name="note_number_text">Calificación:</string>
     <string name="note_percentage_text">% Sobre nota final:</string>
 
+    <!--Pantalla Note Creator-->
+    <string name="edit_note_text">EDITAR CALIFICACIÓN</string>
+    <string name="note_creator_title_text">% Sobre nota final:</string>
+
     <!-- Strings used for fragments for navigation -->
     <string name="first_fragment_label">First Fragment</string>
     <string name="second_fragment_label">Second Fragment</string>
