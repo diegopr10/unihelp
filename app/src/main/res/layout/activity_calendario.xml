@@ -14,7 +14,7 @@
         android:layout_marginTop="36dp"
         android:fontFamily="@font/slackey_regular"
         android:gravity="center"
-        android:text="Calendario "
+        android:text="@string/calendar_title_text"
         android:textColor="@color/white"
         android:textSize="34sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -42,7 +42,8 @@
         android:layout_marginTop="44dp"
         android:background="@drawable/rounded_corner"
         android:onClick="agregarNota"
-        android:text="Pulsa para añadir evento"
+        android:text="@string/event_text"
+        style="@style/MyButtonStyle"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
@@ -64,6 +65,5 @@
             android:layout_height="wrap_content"
             android:background="@color/unihelp_color" />
     </ScrollView>
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>

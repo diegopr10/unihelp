@@ -1,9 +1,12 @@
 <resources>
+
     <!--General-->
     <string name="app_name">Unihelp</string>
+
     <!--Pantalla Bienvenida-->
     <string name="welcome_text">Bienvenido!</string>
     <string name="start_text">EMPEZAR</string>
+
     <!--Pantalla Intro Datos-->
     <string name="cuentanos_text">CUÉNTANOS SOBRE TI</string>
     <string name="como_llamas_text">¿Como te llamas?</string>
@@ -12,18 +15,39 @@
     <string name="que_idioma_text">¿Qué idioma usas?</string>
     <string name="que_cuatri">¿Qué cuatri cursas?</string>
     <string name="next_text">Siguiente</string>
+
+    <!--Pantalla Intro Asignaturas-->
     <string name="como_asignaturas_text">¿CÓMO SE TE DAN LAS ASIGNATURAS?</string>
+
+    <!--Pantalla Intro Optativas-->
+    <string name="optativas_text">En el curso y cuatrimestre que has seleccionado tienes optativas</string>
+    <string name="select_optativas_text">SELECCIONA CUÁLES SON</string>
+    <string name="optativa1_text">Optativa 1</string>
+    <string name="optativa2_text">Optativa 2</string>
+
     <!--Pantalla Inicio-->
     <string name="modo_estudio_text">Modo estudio</string>
     <string name="notas_text">Notas</string>
     <string name="calendario_text">Calendario</string>
     <string name="localizacion_text">Localizacion</string>
-    <string name="alias_text">Alias</string>
+    <string name="alias_text">Nombre</string>
+
+    <!--Pantalla Modo Estudio-->
+    <string name="estudio_button_text">INICIAR</string>
+    <string name="hour_text">00:00</string>
+    <string name="time_hint_text">Tiempo</string>
+    <string name="estudio_text">Introduce el tiempo de estudio en minutos:</string>
+
+    <!--Pantalla Calendario-->
+    <string name="calendar_title_text">CALENDARIO</string>
+    <string name="event_text">Pulsa para añadir evento</string>
+
     <!--Pantalla Ajustes-->
     <string name="settings_title">Ajustes</string>
     <string name="cambiar_nombre_text">Nombre</string>
     <string name="cambiar_idioma_text">Seleccione un idioma</string>
     <string name="aplicar_cambios_text">APLICAR CAMBIOS</string>
+
     <!--PreferenceScreen-->
     <string name="user_settings_title">Ajustes del usuario</string>
     <string name="pref_title_name">Nombre</string>
@@ -48,15 +72,5 @@
     <string name="delete_note_text">ELIMINAR</string>
     <string name="save_note_text">GUARDAR</string>
     <string name="subject_text">Asignatura:</string>
-
-    <!-- Strings used for fragments for navigation -->
-    <string name="first_fragment_label">First Fragment</string>
-    <string name="second_fragment_label">Second Fragment</string>
-    <string name="next">Next</string>
-    <string name="previous">Previous</string>
-
-    <string name="hello_first_fragment">Hello first fragment</string>
-    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
-    <string name="default_notification_channel_id">CanalDeNotificacion</string>
 
 </resources>
