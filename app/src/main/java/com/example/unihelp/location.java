@@ -62,11 +62,12 @@ public class location extends AppCompatActivity implements OnMapReadyCallback {
                 }else{
                     float distance = calculateDisToUc3m(currentLocation);
                     if (distance>=1000){
+
                         distance = distance/1000;
                         distance = Math.round(distance);
                         Toast.makeText(getApplicationContext(), "Estas a "+ distance+ "Km de distancia de la Uc3m", Toast.LENGTH_LONG).show();
                     }else{
-                        Toast.makeText(getApplicationContext(), "Estas a "+ distance+ "m de distancia de la Uc3m", Toast.LENGTH_LONG).show();
+                        Toast.makeText(getApplicationContext(), "Muy bien, estas a "+ distance+ "m de distancia de la Uc3m, asi me gusta", Toast.LENGTH_LONG).show();
 
                     }
 
