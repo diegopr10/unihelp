@@ -23,7 +23,7 @@
             android:layout_weight="1"
             android:layout_marginLeft="20dp"
             android:tag="1"
-            app:srcCompat="@drawable/nofoto" />
+            app:srcCompat="@drawable/nofoto"/>
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="0dp"
